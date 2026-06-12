@@ -7,25 +7,28 @@
   <link rel="stylesheet" href="styles.css?v=6">
 </head>
 
-<body>
+<body class="theme-dark">
 
 <header class="site-header">
   <div class="nav-container">
     <a href="index.html" class="logo">
       <img src="purpletechcatlogo.png" alt="PurpleTechCat Logo">
     </a>
+
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
       <a href="gdpr.html">GDPR</a>
     </nav>
+
     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark or light mode">🌙</button>
   </div>
 </header>
 
 <main id="main-content">
 
+  <!-- Paw Animation -->
   <div class="paw-track">
     <span class="paw">🐾</span>
     <span class="paw">🐾</span>
@@ -36,11 +39,11 @@
 
   <!-- Accessibility Toolbar -->
   <div class="accessibility-toolbar" aria-label="Accessibility tools" role="region">
-    <button type="button" class="a11y-btn" id="a11y-font-inc">A+<span class="sr-only">Increase text size</span></button>
-    <button type="button" class="a11y-btn" id="a11y-font-dec">A-<span class="sr-only">Decrease text size</span></button>
-    <button type="button" class="a11y-btn" id="a11y-contrast-toggle">⚡<span class="sr-only">Toggle high contrast mode</span></button>
-    <button type="button" class="a11y-btn" id="a11y-dyslexic-toggle">Dys<span class="sr-only">Toggle dyslexia-friendly font</span></button>
-    <button type="button" class="a11y-btn" id="a11y-reset">⟳<span class="sr-only">Reset accessibility settings</span></button>
+    <button type="button" class="a11y-btn" id="a11y-font-inc">A+</button>
+    <button type="button" class="a11y-btn" id="a11y-font-dec">A-</button>
+    <button type="button" class="a11y-btn" id="a11y-contrast-toggle">⚡</button>
+    <button type="button" class="a11y-btn" id="a11y-dyslexic-toggle">Dys</button>
+    <button type="button" class="a11y-btn" id="a11y-reset">⟳</button>
   </div>
 
   <!-- TWO-COLUMN LAYOUT -->
@@ -72,14 +75,12 @@
       <img src="happyitcat.png" alt="Happy IT Cat">
     </div>
 
-  </div> <!-- END TWO-COLUMN LAYOUT -->
+  </div>
 
-  <!-- ROW 1: BOOK IT SUPPORT -->
+  <!-- BOOK IT SUPPORT -->
   <section class="card">
-    <div class="book-title">
-      <h2>🌈 Ready for Some Tech Help?</h2>
-      <p>Choose a time and I’ll guide you through it.</p>
-    </div>
+    <h2>🌈 Ready for Some Tech Help?</h2>
+    <p>Choose a time and I’ll guide you through it.</p>
 
     <div class="booking-frame">
       <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
@@ -100,67 +101,67 @@
     </div>
   </section>
 
-  <!-- ROW 2: FAQ -->
+  <!-- FAQ SECTION -->
   <section class="card faq-card">
     <h2>Frequently Asked Questions</h2>
-    <button class="purple-btn">Open FAQ</button>
+    <button id="open-faq" class="purple-btn">Open FAQ</button>
   </section>
 
-  <!-- FAQ Modal -->
-  <div id="faqModal" class="faq-modal" aria-hidden="true">
+  <!-- FAQ MODAL -->
+  <div id="faq-modal" class="faq-modal" aria-hidden="true">
     <div class="faq-content" role="dialog" aria-labelledby="faqTitle">
-      <button class="faq-close" id="faqClose" aria-label="Close FAQ">×</button>
+      <button id="close-faq" class="faq-close" aria-label="Close FAQ">×</button>
 
       <h2 id="faqTitle">PurpleTechCat – FAQ</h2>
 
       <div class="faq-item">
         <h3>What is PurpleTechCat?</h3>
-        <p>PurpleTechCat is my personal project where I offer free, friendly IT help for the L25 community. I explain things in simple language and help make technology less stressful.</p>
+        <p>PurpleTechCat is my personal project where I offer free, friendly IT help for the L25 community.</p>
       </div>
 
       <div class="faq-item">
         <h3>What can you help with?</h3>
-        <p>I can help with slow devices, Wi‑Fi issues, email problems, passwords, new device setup, online safety, error messages, file organisation, gaming issues, and general tech worries.</p>
+        <p>I can help with slow devices, Wi‑Fi issues, email problems, passwords, new device setup, online safety, and more.</p>
       </div>
 
       <div class="faq-item">
         <h3>Do you support gaming?</h3>
-        <p>Yes — I can help with console setup, connection issues, parental controls, online safety, and basic troubleshooting for PlayStation, Xbox, Nintendo and PC gaming.</p>
+        <p>Yes — consoles, PC gaming, parental controls, and connection issues.</p>
       </div>
 
       <div class="faq-item">
         <h3>Do you support primary school devices?</h3>
-        <p>Yes — I can help with school laptops, tablets, logins, homework platforms, safe browsing, and making sure children can use their devices confidently and safely.</p>
+        <p>Yes — laptops, tablets, logins, homework platforms, and safe browsing.</p>
       </div>
 
       <div class="faq-item">
         <h3>Do you help with insured devices?</h3>
-        <p>Yes — I can check what’s wrong, help you gather proof for a claim, explain the issue in simple words, and help set up a replacement device. I don’t provide insurance myself.</p>
+        <p>Yes — I help diagnose issues and prepare information for claims.</p>
       </div>
 
       <div class="faq-item">
         <h3>What can’t you do?</h3>
-        <p>I don’t repair broken screens or hardware, replace parts, visit homes, contact insurance companies, remove parental controls, or work on business servers.</p>
+        <p>I don’t repair hardware, visit homes, or work on business servers.</p>
       </div>
 
       <div class="faq-item">
         <h3>Is your help really free?</h3>
-        <p>Yes — PurpleTechCat is a free community service. I enjoy helping people feel more confident with technology.</p>
+        <p>Yes — PurpleTechCat is a free community service.</p>
       </div>
 
       <div class="faq-item">
         <h3>When will you reply?</h3>
-        <p>I reply during my support hours: Tue–Thu 6pm–10pm, Sat–Sun 7am–10am. If you message outside these times, you’ll see “Offline – I will reply during my support hours.”</p>
+        <p>I reply during my support hours: Tue–Thu 6pm–10pm, Sat–Sun 7am–10am.</p>
       </div>
 
       <div class="faq-item">
         <h3>How do you book support?</h3>
-        <p>Use the booking button on the Home Page to choose a time that works for you. All support is online.</p>
+        <p>Use the booking button above to choose a time.</p>
       </div>
 
       <div class="faq-item">
         <h3>Is my information safe?</h3>
-        <p>Yes — I only ask for the details I need to help you. I don’t store or share your information.</p>
+        <p>Yes — I only ask for the details needed to help you.</p>
       </div>
 
     </div>
