@@ -274,3 +274,44 @@ nav a.active {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/* Contact form container */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* All inputs, selects, and textarea */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Fix dropdown arrow alignment */
+.contact-form select {
+  appearance: none;
+  background-color: #fff;
+}
+
+/* Button styling */
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: #7a3cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #692fe0;
+}
