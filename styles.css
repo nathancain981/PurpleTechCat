@@ -315,3 +315,20 @@ nav a.active {
 .contact-form button:hover {
   background: #692fe0;
 }
+/* Skip link (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #7a3cff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+/* Show only when focused */
+.skip-link:focus {
+  top: 10px;
+}
