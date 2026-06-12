@@ -1,68 +1,59 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PurpleTechCat – GDPR & Privacy</title>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="gdpr-page">
+<body>
 
   <!-- Skip link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="logo">
-  <img src="./purpletechcatlogo.png" alt="PurpleTechCat Logo">
-</a>
+        <img src="purpletechcatlogo.png" alt="PurpleTechCat Logo">
+      </a>
+
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="gdpr.html">GDPR</a>
+        <a href="gdpr.html" class="active">GDPR</a>
       </nav>
+
       <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark or light mode">🌙</button>
     </div>
   </header>
 
-<div class="paw-track">
-  <span class="paw">🐾</span>
-  <span class="paw">🐾</span>
-  <span class="paw">🐾</span>
-  <span class="paw">🐾</span>
-  <span class="paw">🐾</span>
-</div>
-
-  <!-- Accessibility Toolbar -->
-  <div class="accessibility-toolbar" aria-label="Accessibility tools" role="region">
-    <button type="button" class="a11y-btn" id="a11y-font-inc">
-      A+
-      <span class="sr-only">Increase text size</span>
-    </button>
-    <button type="button" class="a11y-btn" id="a11y-font-dec">
-      A-
-      <span class="sr-only">Decrease text size</span>
-    </button>
-    <button type="button" class="a11y-btn" id="a11y-contrast-toggle">
-      ⚡
-      <span class="sr-only">Toggle high contrast mode</span>
-    </button>
-    <button type="button" class="a11y-btn" id="a11y-dyslexic-toggle">
-      Dys
-      <span class="sr-only">Toggle dyslexia-friendly font</span>
-    </button>
-    <button type="button" class="a11y-btn" id="a11y-reset">
-      ⟳
-      <span class="sr-only">Reset accessibility settings</span>
-    </button>
+  <!-- PAW TRACK -->
+  <div class="paw-track">
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
+    <span class="paw">🐾</span>
   </div>
 
+  <!-- ACCESSIBILITY TOOLBAR -->
+  <div class="accessibility-toolbar" aria-label="Accessibility tools" role="region">
+    <button type="button" class="a11y-btn" id="a11y-font-inc">A+</button>
+    <button type="button" class="a11y-btn" id="a11y-font-dec">A-</button>
+    <button type="button" class="a11y-btn" id="a11y-contrast-toggle">⚡</button>
+    <button type="button" class="a11y-btn" id="a11y-dyslexic-toggle">Dys</button>
+    <button type="button" class="a11y-btn" id="a11y-reset">⟳</button>
+  </div>
+
+  <!-- MAIN CONTENT -->
   <main id="main-content">
     <div class="content-with-cat">
 
+      <!-- LEFT COLUMN -->
       <div class="content-left">
 
         <section class="hero">
@@ -94,14 +85,20 @@
 
       </div>
 
+      <!-- RIGHT COLUMN -->
       <div class="cat-right">
-        <img src="./stressedcat.png" alt="Stressed Debugging Cat">
+        <img src="stressedcat.png" alt="Stressed Debugging Cat">
       </div>
 
     </div>
   </main>
 
-  <footer class="site-footer"><p>© PurpleTechCat</p></footer>
-  <script src="./main.js"></script>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© PurpleTechCat</p>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
+
 </html>
