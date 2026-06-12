@@ -5,8 +5,15 @@ const themeToggle = document.getElementById("theme-toggle");
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("theme-light");
-    document.body.classList.toggle("theme-dark");
+    const isLight = document.body.classList.contains("theme-light");
+
+    if (isLight) {
+      document.body.classList.remove("theme-light");
+      document.body.classList.add("theme-dark");
+    } else {
+      document.body.classList.remove("theme-dark");
+      document.body.classList.add("theme-light");
+    }
   });
 }
 
