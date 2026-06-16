@@ -11,49 +11,6 @@
   border-radius: 999px;
 
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: all 0.25s ease;
-}
-
-/* Hover */
-.theme-toggle-btn:hover {
-  background: var(--accent-soft);
-  transform: scale(1.08);
-}
-
-/* Click */
-.theme-toggle-btn:active {
-  transform: scale(0.95);
-}
-
-/* Glow in dark mode */
-.theme-dark .theme-toggle-btn {
-  box-shadow: 0 0 10px rgba(179, 140, 255, 0.5);
-}
-
-/* Position (optional but recommended) */
-.theme-toggle-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 999;
-}
-/* ============================
-   THEME TOGGLE BUTTON
-============================ */
-.theme-toggle-btn {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-main);
-
-  font-size: 22px;
-  padding: 10px 14px;
-  border-radius: 999px;
-
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
