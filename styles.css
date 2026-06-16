@@ -244,7 +244,11 @@ button {
 .card {
   animation: fadeIn 0.5s ease;
 }
-.profile-pic {
+
+/* =========================================================
+   PROFILE PICTURE
+========================================================= */
+.bio-photo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
