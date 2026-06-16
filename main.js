@@ -97,3 +97,16 @@ reset?.addEventListener("click", () => {
 });
 
 });
+// Close when clicking outside the FAQ box
+faqModal.addEventListener("click", (e) => {
+  if (e.target === faqModal) {
+    faqModal.classList.remove("visible");
+  }
+});
+
+// Close with ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    faqModal.classList.remove("visible");
+  }
+});
