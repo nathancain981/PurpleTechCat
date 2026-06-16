@@ -1,162 +1,265 @@
-/* ============================
-   ROOT
-============================ */
+/* =========================================================
+   ROOT VARIABLES (FUTURISTIC THEME)
+========================================================= */
 :root {
-  --bg-page: #0b0b12;
-  --bg-card: #141420;
+  --bg-page: radial-gradient(circle at top, #0f0f1a, #050509);
+  --bg-card: rgba(20, 20, 35, 0.7);
   --text-main: #f5f5ff;
-  --accent: #b38cff;
-  --accent-soft: rgba(179,140,255,0.2);
+  --accent: #a86bff;
+  --accent-glow: rgba(168, 107, 255, 0.6);
+  --border-subtle: rgba(255,255,255,0.08);
+  --font-main: "Segoe UI", sans-serif;
 }
 
-/* Light theme */
+/* Light Mode */
 .theme-light {
   --bg-page: #f5f5ff;
-  --text-main: #1a1a1a;
+  --text-main: #111;
   --bg-card: #ffffff;
 }
 
-/* ============================
-   BASE
-============================ */
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background: var(--bg-page);
-  color: var(--text-main);
+/* =========================================================
+   GLOBAL
+========================================================= */
+* {
+  box-sizing: border-box;
 }
 
-/* ============================
-   NAVBAR
-============================ */
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--bg-page);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+
+/* =========================================================
+   HEADER / NAVBAR
+========================================================= */
 .site-header {
   position: sticky;
-  top:0;
-  background: #00000066;
-  backdrop-filter: blur(10px);
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.4);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 100;
 }
 
 .nav-container {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  max-width:1200px;
-  margin:auto;
-  padding:10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px;
 }
 
 .logo img {
-  height:45px;
+  height: 45px;
 }
 
+/* NAV LINKS */
 nav a {
-  color:var(--text-main);
-  text-decoration:none;
-  margin:0 10px;
+  color: var(--text-main);
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color:var(--accent);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* ============================
+/* =========================================================
+   HERO
+========================================================= */
+.hero h1 {
+  font-size: 32px;
+}
+
+.hero p {
+  opacity: 0.8;
+}
+
+/* =========================================================
    LAYOUT
-============================ */
+========================================================= */
 .content-with-cat {
-  display:flex;
-  gap:2rem;
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
+  display: flex;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px;
 }
 
 .content-left {
-  flex:2;
+  flex: 2;
 }
 
 .cat-right img {
-  width:250px;
+  width: 280px;
+  filter: drop-shadow(0 0 15px #a86bff);
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
   .content-with-cat {
-    flex-direction:column;
-    text-align:center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cat-right img {
+    width: 220px;
   }
 }
 
-/* ============================
+/* =========================================================
    CARDS
-============================ */
+========================================================= */
 .card {
-  background:var(--bg-card);
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:20px;
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-subtle);
+  transition: 0.3s;
 }
 
-/* ============================
-   PROFILE IMAGE
-============================ */
-.bio-photo {
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  object-fit:cover;
-  display:block;
-  margin:auto;
-  border:3px solid var(--accent);
+/* Hover glow */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--accent-glow);
 }
 
-/* ============================
+/* =========================================================
    BUTTONS
-============================ */
+========================================================= */
+.purple-btn,
 button {
-  cursor:pointer;
+  background: linear-gradient(135deg, #a86bff, #7a3cff);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* ============================
-   TOGGLE BUTTON
-============================ */
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* =========================================================
+   THEME TOGGLE (FUTURISTIC)
+========================================================= */
 .theme-toggle-btn {
-  position:fixed;
-  top:20px;
-  right:20px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
 
-  background:var(--bg-card);
-  border:none;
-  border-radius:50%;
-  font-size:22px;
-  width:50px;
-  height:50px;
+  width: 55px;
+  height: 55px;
+  font-size: 22px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background: var(--bg-card);
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .theme-toggle-btn:hover {
-  transform:scale(1.1);
+  transform: rotate(20deg) scale(1.1);
+  box-shadow: 0 0 15px var(--accent-glow);
 }
 
-/* ============================
-   ACCESSIBILITY
-============================ */
+/* =========================================================
+   ACCESSIBILITY TOOLBAR
+========================================================= */
 .accessibility-toolbar {
-  position:fixed;
-  top:100px;
-  right:10px;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .a11y-btn {
-  margin:4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* ============================
+.a11y-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
+.bio-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  display: block;
+  margin: 0 auto 10px;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-item h3 {
+  color: var(--accent);
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+#statusText {
+  font-weight: bold;
+}
+
+/* =========================================================
    FOOTER
-============================ */
+========================================================= */
 .site-footer {
-  text-align:center;
-  padding:20px;
+  text-align: center;
+  padding: 20px;
+  opacity: 0.6;
+}
+
+/* =========================================================
+   SCROLLBAR (COOL DETAIL)
+========================================================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
 }
