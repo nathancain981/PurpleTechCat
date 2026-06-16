@@ -1,110 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PurpleTechCat – GDPR & Privacy</title>
-  <link rel="stylesheet" href="styles.css?v=40">
+  <link rel="stylesheet" href="styles.css?v=37">
 </head>
 
 <body class="theme-dark">
 
-  <!-- Skip link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="purpletechcatlogo.png" alt="PurpleTechCat Logo">
+    </a>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="nav-container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="gdpr.html" class="active">GDPR</a>
+    </nav>
 
-      <a href="index.html" class="logo">
-        <img src="purpletechcatlogo.png" alt="PurpleTechCat Logo">
-      </a>
+    <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+  </div>
+</header>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="gdpr.html" class="active">GDPR</a>
-      </nav>
+<main id="main-content">
 
-      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark or light mode">🌙</button>
+  <div class="page-section">
 
-    </div>
-  </header>
+    <h1 class="typing">GDPR & Privacy</h1>
+    <p>How PurpleTechCat protects your data.</p>
 
-  <!-- PAW TRACK -->
-  <div class="paw-track">
-    <span class="paw">🐾</span>
-    <span class="paw">🐾</span>
-    <span class="paw">🐾</span>
-    <span class="paw">🐾</span>
-    <span class="paw">🐾</span>
+    <section class="card">
+
+      <h2>Your Privacy Matters</h2>
+      <p>PurpleTechCat follows GDPR rules to keep your information safe.</p>
+
+      <h2>What Data I Collect</h2>
+      <ul>
+        <li>Your name and email</li>
+        <li>Details about your IT issue</li>
+        <li>Booking information</li>
+      </ul>
+
+      <h2>Your Rights</h2>
+      <ul>
+        <li>Request your data</li>
+        <li>Ask for corrections</li>
+        <li>Ask for deletion</li>
+        <li>Withdraw consent</li>
+      </ul>
+
+      <p>If you have questions, you can contact me anytime.</p>
+
+    </section>
+
   </div>
 
-  <!-- ACCESSIBILITY TOOLBAR -->
-  <div class="accessibility-toolbar" aria-label="Accessibility tools" role="region">
-    <button type="button" class="a11y-btn" id="a11y-font-inc">A+</button>
-    <button type="button" class="a11y-btn" id="a11y-font-dec">A-</button>
-    <button type="button" class="a11y-btn" id="a11y-contrast-toggle">⚡</button>
-    <button type="button" class="a11y-btn" id="a11y-dyslexic-toggle">Dys</button>
-    <button type="button" class="a11y-btn" id="a11y-reset">⟳</button>
-  </div>
+</main>
 
-  <!-- MAIN CONTENT -->
-  <main id="main-content">
+<footer class="site-footer">
+  <p>© PurpleTechCat</p>
+</footer>
 
-    <div class="content-with-cat">
-
-      <!-- LEFT COLUMN -->
-      <div class="content-left">
-
-        <section class="hero">
-          <h1 class="typing">GDPR & Privacy</h1>
-          <p>How PurpleTechCat protects your data.</p>
-        </section>
-
-        <section class="card">
-
-          <h2>Your Privacy Matters</h2>
-          <p>PurpleTechCat follows GDPR rules to keep your information safe.</p>
-
-          <h3>What Data I Collect</h3>
-          <ul>
-            <li>Your name and email</li>
-            <li>Details about your IT issue</li>
-            <li>Booking information</li>
-          </ul>
-
-          <h3>Your Rights</h3>
-          <ul>
-            <li>Request your data</li>
-            <li>Ask for corrections</li>
-            <li>Ask for deletion</li>
-            <li>Withdraw consent</li>
-          </ul>
-
-          <p>If you have questions, you can contact me anytime.</p>
-
-        </section>
-
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <div class="cat-right">
-        <img src="stressedcat.png" alt="Stressed Debugging Cat">
-      </div>
-
-    </div>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>© PurpleTechCat</p>
-  </footer>
-
-  <script src="main.js?v=24"></script>
+<script src="main.js?v=24"></script>
 
 </body>
 </html>
