@@ -244,7 +244,7 @@ button:hover {
 }
 
 /* =========================================================
-   MOBILE RESPONSIVE
+   MOBILE RESPONSIVE (ONE CLEAN BLOCK)
 ========================================================= */
 @media (max-width: 600px) {
   .theme-toggle-btn {
@@ -260,9 +260,6 @@ button:hover {
   .typing {
     font-size: 1.6rem;
   }
-}
-/* MOBILE FIX FOR HEADER + LOGO + NAV */
-@media (max-width: 600px) {
 
   .nav-container {
     flex-direction: column;
@@ -272,38 +269,7 @@ button:hover {
   }
 
   .logo img {
-    width: 140px; /* scales logo properly */
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  nav a {
-    margin: 0;
-    font-size: 15px;
-  }
-
-  .card {
-    width: 94%;
-    padding: 20px;
-  }
-}
-/* MOBILE FIX FOR HEADER + LOGO + NAV */
-@media (max-width: 600px) {
-
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .logo img {
-    width: 120px; /* scales logo properly */
+    width: 120px;
   }
 
   .logo {
