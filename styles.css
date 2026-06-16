@@ -307,4 +307,30 @@ button:hover {
     margin: 0;
     font-size: 15px;
   }
+@media (max-width: 600px) {
+  img[src*="cat.png"] {
+    width: 160px;
+  }
+
+  img[src*="bio"] {
+    width: 140px;
+  }
+}
+/* Cat mascot image (cat.png) */
+img[src*="cat.png"] {
+  width: 220px;      /* medium size */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Bio photo (bio-photo.png or similar) */
+img[src*="bio"] {
+  width: 180px;      /* medium-small */
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 20px auto;
 }
