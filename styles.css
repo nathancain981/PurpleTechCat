@@ -1,21 +1,25 @@
 /* =========================================================
-   ROOT VARIABLES (FUTURISTIC THEME)
+   ROOT VARIABLES — CLEAN FUTURISTIC MINIMAL (2026)
 ========================================================= */
 :root {
-  --bg-page: radial-gradient(circle at top, #0f0f1a, #050509);
-  --bg-card: rgba(20, 20, 35, 0.7);
+  --bg-page: #0e0e14;
+  --bg-card: #16161f;
   --text-main: #f5f5ff;
   --accent: #a86bff;
-  --accent-glow: rgba(168, 107, 255, 0.6);
+  --accent-soft: #c9aaff;
   --border-subtle: rgba(255,255,255,0.08);
   --font-main: "Segoe UI", sans-serif;
+
+  --radius: 14px;
+  --transition: 0.25s ease;
 }
 
 /* Light Mode */
 .theme-light {
   --bg-page: #f5f5ff;
-  --text-main: #111;
   --bg-card: #ffffff;
+  --text-main: #111;
+  --border-subtle: rgba(0,0,0,0.1);
 }
 
 /* =========================================================
@@ -30,7 +34,27 @@ body {
   font-family: var(--font-main);
   background: var(--bg-page);
   color: var(--text-main);
-  transition: all 0.3s ease;
+  transition: background var(--transition), color var(--transition);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  padding: 8px 12px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  transition: top var(--transition);
+}
+.skip-link:focus {
+  top: 10px;
 }
 
 /* =========================================================
@@ -39,39 +63,38 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  backdrop-filter: blur(12px);
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.25);
   border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: blur(6px);
   z-index: 100;
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: 1200px;
   margin: auto;
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo img {
   height: 45px;
 }
 
-/* NAV LINKS */
 nav a {
   color: var(--text-main);
   text-decoration: none;
   margin: 0 10px;
   padding: 6px 12px;
-  border-radius: 999px;
-  transition: 0.3s;
+  border-radius: var(--radius);
+  transition: var(--transition);
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 0 10px var(--accent-glow);
 }
 
 /* =========================================================
@@ -79,6 +102,7 @@ nav a:hover {
 ========================================================= */
 .hero h1 {
   font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .hero p {
@@ -89,11 +113,11 @@ nav a:hover {
    LAYOUT
 ========================================================= */
 .content-with-cat {
-  display: flex;
-  gap: 2rem;
   max-width: 1100px;
   margin: auto;
   padding: 30px;
+  display: flex;
+  gap: 2rem;
 }
 
 .content-left {
@@ -101,8 +125,8 @@ nav a:hover {
 }
 
 .cat-right img {
-  width: 280px;
-  filter: drop-shadow(0 0 15px #a86bff);
+  width: 260px;
+  border-radius: var(--radius);
 }
 
 /* MOBILE */
@@ -111,9 +135,8 @@ nav a:hover {
     flex-direction: column;
     text-align: center;
   }
-
   .cat-right img {
-    width: 220px;
+    margin: auto;
   }
 }
 
@@ -122,66 +145,60 @@ nav a:hover {
 ========================================================= */
 .card {
   background: var(--bg-card);
-  backdrop-filter: blur(15px);
-  border-radius: 15px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
   padding: 20px;
   margin-bottom: 20px;
-  border: 1px solid var(--border-subtle);
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
-/* Hover glow */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-3px);
+  border-color: var(--accent);
 }
 
 /* =========================================================
    BUTTONS
 ========================================================= */
+button,
 .purple-btn,
-button {
-  background: linear-gradient(135deg, #a86bff, #7a3cff);
-  color: white;
+.primary-btn {
+  background: var(--accent);
+  color: #fff;
   border: none;
   padding: 10px 16px;
-  border-radius: 999px;
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--accent-glow);
+button:hover,
+.purple-btn:hover,
+.primary-btn:hover {
+  background: var(--accent-soft);
 }
 
 /* =========================================================
-   THEME TOGGLE (FUTURISTIC)
+   THEME TOGGLE
 ========================================================= */
 .theme-toggle-btn {
   position: fixed;
   top: 20px;
   right: 20px;
-
   width: 55px;
   height: 55px;
   font-size: 22px;
-
   background: var(--bg-card);
-  border-radius: 50%;
   border: 1px solid var(--border-subtle);
-
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
 .theme-toggle-btn:hover {
-  transform: rotate(20deg) scale(1.1);
-  box-shadow: 0 0 15px var(--accent-glow);
+  transform: scale(1.1);
 }
 
 /* =========================================================
@@ -200,71 +217,19 @@ button:hover {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   padding: 8px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   color: var(--text-main);
-  cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
 .a11y-btn:hover {
   background: var(--accent);
-  color: white;
+  color: #fff;
 }
 
-/* =========================================================
-   PROFILE PHOTO
-========================================================= */
-.bio-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent);
-  display: block;
-  margin: 0 auto 10px;
-  box-shadow: 0 0 20px var(--accent-glow);
-}
-
-/* =========================================================
-   FAQ
-========================================================= */
-.faq-item {
-  margin-bottom: 15px;
-}
-
-.faq-item h3 {
-  color: var(--accent);
-}
-
-/* =========================================================
-   STATUS
-========================================================= */
-#statusText {
-  font-weight: bold;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-.site-footer {
-  text-align: center;
-  padding: 20px;
-  opacity: 0.6;
-}
-
-/* =========================================================
-   SCROLLBAR (COOL DETAIL)
-========================================================= */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
-}
+/* Accessibility modes */
 .font-small { font-size: 14px; }
-.font-large { font-size: 24px; } /* make bigger so you see it */
+.font-large { font-size: 22px; }
 
 .high-contrast {
   background: #000 !important;
@@ -277,52 +242,83 @@ button:hover {
 }
 
 .dyslexic-font {
-  font-family: "Comic Sans MS", Arial;
+  font-family: "Comic Sans MS", Arial, sans-serif;
 }
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
+.bio-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  margin: 0 auto 10px;
+}
+
 /* =========================================================
    FAQ POP-UP (MODAL)
 ========================================================= */
-
-/* Darkened background overlay */
 .faq-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  display: none; /* hidden by default */
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
 
-/* When opened */
 .faq-modal.visible {
   display: flex;
 }
 
-/* The pop-up box */
 .faq-content {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  backdrop-filter: blur(15px);
+  border-radius: var(--radius);
   padding: 25px;
-  border-radius: 15px;
   width: 90%;
   max-width: 600px;
-
-  /* 👇 The important part */
   max-height: 80vh;
   overflow-y: auto;
+}
 
-  /* Optional: smooth scroll */
-  scroll-behavior: smooth;
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-item h3 {
+  color: var(--accent);
 }
 
 /* Close button */
-#closeFaq {
+#close-faq {
+  float: right;
   background: #ff4d6d;
-  margin-top: 15px;
-  width: 100%;
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.6;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: var(--radius);
 }
