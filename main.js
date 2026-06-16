@@ -1,10 +1,12 @@
 // ============================
-// LOAD SAVED SETTINGS
+// LOAD SETTINGS
 // ============================
 document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    document.body.classList.add(savedTheme);
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("theme-dark");
+    setIcon(true);
   }
 });
 
@@ -13,17 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
 // ============================
 const themeToggle = document.getElementById("theme-toggle");
 
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("theme-dark");
-
-    const isDark = document.body.classList.contains("theme-dark");
-    localStorage.setItem("theme", isDark ? "theme-dark" : "");
-  });
+function setIcon(isDark) {
+  if (themeToggle) {
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+  }
 }
 
+themeToggle?.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("theme-dark");
+
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  setIcon(isDark);
+});
+
 // ============================
-// ACCESSIBILITY CONTROLS
+// ACCESSIBILITY
 // ============================
 const btnInc = document.getElementById("a11y-font-inc");
 const btnDec = document.getElementById("a11y-font-dec");
@@ -61,17 +67,18 @@ function updateStatus() {
   const now = new Date();
   const day = now.getDay();
   const hour = now.getHours();
-  let online = false;
 
-  if ((day === 6 || day === 0) && hour >= 7 && hour < 10) online = true;
-  if ((day === 2 || day === 3) && hour >= 18 && hour < 22) online = true;
-  if (day === 4 && hour >= 20 && hour < 22) online = true;
+  let online =
+    ((day === 6 || day === 0) && hour >= 7 && hour < 10) ||
+    ((day === 2 || day === 3) && hour >= 18 && hour < 22) ||
+    (day === 4 && hour >= 20 && hour < 22);
 
   const statusText = document.getElementById("statusText");
+
   if (statusText) {
     statusText.textContent = online
       ? "🟢 Online – I’m here to help!"
-      : "🔴 Offline – I will reply during my support hours.";
+      : "🔴 Offline – I will reply during support hours.";
   }
 }
 
@@ -94,19 +101,17 @@ closeFAQ?.addEventListener("click", () => {
 });
 
 // ============================
-// CONTACT FORM
+// FORM
 // ============================
 const form = document.getElementById("contactForm");
 
-if (form) {
-  form.addEventListener("submit", (e) => {
-    if (!form.checkValidity()) {
-      e.preventDefault();
-      alert("Please fill in all fields!");
-    } else {
-      setTimeout(() => {
-        window.location.href = "thankyou.html";
-      }, 800);
-    }
-  });
-}
+form?.addEventListener("submit", (e) => {
+  if (!form.checkValidity()) {
+    e.preventDefault();
+    alert("Please fill in all fields!");
+  } else {
+    setTimeout(() => {
+      window.location.href = "thankyou.html";
+    }, 800);
+  }
+});
