@@ -40,12 +40,10 @@ body {
 /* =========================================================
    FULL-WIDTH LAYOUT SYSTEM
 ========================================================= */
-
-/* Make ALL containers full-width */
 .site-header,
 .nav-container,
-.card,
 .page-section,
+.card,
 .content-with-cat,
 .content-left,
 .cat-right {
@@ -56,7 +54,7 @@ body {
   padding-right: 20px;
 }
 
-/* Center logo with consistent spacing */
+/* Center logo */
 .logo {
   text-align: center;
   margin: 20px 0;
@@ -74,7 +72,7 @@ img[src*="purpletechcatlogo"] {
 }
 
 /* =========================================================
-   GLOBAL IMAGE SIZING (Bio + Cat Images)
+   GLOBAL IMAGE SIZING
 ========================================================= */
 
 /* Bio photo */
@@ -89,7 +87,7 @@ img[src*="bio"] {
   margin: 20px auto;
 }
 
-/* Cat mascot images */
+/* Cat images */
 .cat-right img,
 .cat-section img,
 img[src*="cat"],
@@ -191,25 +189,6 @@ nav a.active {
 }
 
 /* =========================================================
-   SERVICE CARDS
-========================================================= */
-.service-card {
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: var(--radius);
-  background: #141414;
-  border: 1px solid #222;
-}
-
-/* =========================================================
-   STATUS SECTION
-========================================================= */
-.status-card {
-  text-align: center;
-  font-size: 18px;
-}
-
-/* =========================================================
    BUTTONS
 ========================================================= */
 .purple-btn,
@@ -229,66 +208,12 @@ button:hover {
 }
 
 /* =========================================================
-   FAQ MODAL
-========================================================= */
-.faq-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9000;
-}
-
-.faq-modal.visible {
-  display: flex;
-}
-
-.faq-content {
-  background: var(--bg-card);
-  padding: 25px;
-  border-radius: var(--radius);
-  width: 90%;
-  max-width: 700px;
-  max-height: 80vh;
-  overflow-y: auto;
-  border: 1px solid #333;
-}
-
-.faq-close {
-  float: right;
-  background: none;
-  border: none;
-  font-size: 28px;
-  color: var(--text-main);
-  cursor: pointer;
-}
-
-/* =========================================================
    FOOTER
 ========================================================= */
 .site-footer {
   text-align: center;
   padding: 20px;
   color: var(--text-subtle);
-}
-
-/* =========================================================
-   ACCESSIBILITY MODES
-========================================================= */
-.font-large { font-size: 120%; }
-.font-small { font-size: 90%; }
-
-.high-contrast {
-  --bg: #000;
-  --bg-card: #000;
-  --text-main: #fff;
-  --accent: #ffea00;
-}
-
-.dyslexic-font {
-  font-family: "OpenDyslexic", Arial, sans-serif;
 }
 
 /* =========================================================
