@@ -1,6 +1,160 @@
-/* ============================
+/* =========================================================
+   ROOT VARIABLES (THEME SYSTEM)
+========================================================= */
+:root {
+  --bg-page: #0b0b12;
+  --bg-card: rgba(15, 15, 25, 0.9);
+  --text-main: #f5f5ff;
+  --accent: #b38cff;
+  --accent-soft: rgba(179, 140, 255, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --font-main: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Light theme */
+.theme-light {
+  --bg-page: #f5f5ff;
+  --text-main: #1a1a1a;
+  --bg-card: #ffffff;
+}
+
+/* =========================================================
+   BASE STYLES
+========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--bg-page);
+  color: var(--text-main);
+}
+
+/* =========================================================
+   HEADER / NAVBAR
+========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: var(--accent-soft);
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+.card {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-subtle);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn {
+  background: linear-gradient(135deg, #b38cff, #8f5fff);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #9b59ff;
+}
+
+/* =========================================================
+   ACCESSIBILITY TOOLBAR
+========================================================= */
+.accessibility-toolbar {
+  position: fixed;
+  right: 10px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.a11y-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.a11y-btn:hover {
+  background: var(--accent-soft);
+}
+
+/* Font sizes */
+.font-small { font-size: 14px; }
+.font-large { font-size: 20px; }
+
+/* Accessibility modes */
+.high-contrast {
+  background: black;
+  color: yellow;
+}
+
+.dyslexic-font {
+  font-family: "Comic Sans MS", Arial;
+}
+
+/* =========================================================
    THEME TOGGLE BUTTON
-============================ */
+========================================================= */
 .theme-toggle-btn {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -15,7 +169,7 @@
   align-items: center;
   justify-content: center;
 
-  transition: all 0.25s ease;
+  transition: 0.25s ease;
 
   position: fixed;
   top: 20px;
@@ -25,14 +179,68 @@
 
 .theme-toggle-btn:hover {
   background: var(--accent-soft);
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
-.theme-toggle-btn:active {
-  transform: scale(0.95);
-}
-
-/* Glow effect in dark mode */
 .theme-dark .theme-toggle-btn {
-  box-shadow: 0 0 10px rgba(179, 140, 255, 0.5);
+  box-shadow: 0 0 10px rgba(179, 140, 255, 0.6);
+}
+
+/* =========================================================
+   FAQ MODAL
+========================================================= */
+.faq-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.faq-modal.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-content {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.card {
+  animation: fadeIn 0.5s ease;
 }
