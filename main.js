@@ -26,55 +26,74 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================
-  // ACCESSIBILITY BUTTONS
-  // ============================
-  const ids = [
-    "a11y-font-inc",
-    "a11y-font-dec",
-    "a11y-contrast-toggle",
-    "a11y-dyslexic-toggle",
-    "a11y-reset"
-  ];
+// ACCESSIBILITY BUTTONS
+// ============================
 
-  console.log("Buttons found:");
+const body = document.body;
 
-  ids.forEach(id => {
-    const btn = document.getElementById(id);
-    console.log(id, btn);
-  });
+const ids = [
+  "a11y-font-inc",
+  "a11y-font-dec",
+  "a11y-contrast-toggle",
+  "a11y-dyslexic-toggle",
+  "a11y-reset"
+];
 
-  const inc = document.getElementById("a11y-font-inc");
-  const dec = document.getElementById("a11y-font-dec");
-  const contrast = document.getElementById("a11y-contrast-toggle");
-  const dys = document.getElementById("a11y-dyslexic-toggle");
-  const reset = document.getElementById("a11y-reset");
+console.log("Buttons found:");
 
-  inc?.addEventListener("click", () => {
-    console.log("A+ clicked");
-    body.classList.remove("font-small");
-    body.classList.add("font-large");
-  });
+ids.forEach(id => {
+  const btn = document.getElementById(id);
+  console.log(id, btn);
+});
 
-  dec?.addEventListener("click", () => {
-    console.log("A- clicked");
-    body.classList.remove("font-large");
-    body.classList.add("font-small");
-  });
+// Buttons
+const inc = document.getElementById("a11y-font-inc");
+const dec = document.getElementById("a11y-font-dec");
+const contrast = document.getElementById("a11y-contrast-toggle");
+const dys = document.getElementById("a11y-dyslexic-toggle");
+const reset = document.getElementById("a11y-reset");
 
-  contrast?.addEventListener("click", () => {
-    console.log("Contrast clicked");
-    body.classList.toggle("high-contrast");
-  });
+// Increase font
+inc?.addEventListener("click", () => {
+  console.log("A+ clicked");
+  body.classList.remove("font-small");
+  body.classList.add("font-large");
+});
 
-  dys?.addEventListener("click", () => {
-    console.log("Dys clicked");
-    body.classList.toggle("dyslexic-font");
-  });
+// Decrease font
+dec?.addEventListener("click", () => {
+  console.log("A- clicked");
+  body.classList.remove("font-large");
+  body.classList.add("font-small");
+});
 
-  reset?.addEventListener("click", () => {
-    console.log("Reset clicked");
-    body.className = "theme-dark";
-    localStorage.clear();
-  });
+// Contrast
+contrast?.addEventListener("click", () => {
+  console.log("Contrast clicked");
+  body.classList.toggle("high-contrast");
+});
+
+// Dyslexia font
+dys?.addEventListener("click", () => {
+  console.log("Dys clicked");
+  body.classList.toggle("dyslexic-font");
+});
+
+// Reset
+reset?.addEventListener("click", () => {
+  console.log("Reset clicked");
+
+  body.classList.remove(
+    "font-small",
+    "font-large",
+    "high-contrast",
+    "dyslexic-font"
+  );
+
+  body.classList.remove("theme-light");
+  body.classList.add("theme-dark");
+
+  localStorage.clear();
+});
 
 });
