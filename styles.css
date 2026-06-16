@@ -15,7 +15,7 @@
 /* Light theme */
 .theme-light {
   --bg-page: #f5f5ff;
-  --bg-card: rgba(255,255,255,0.85);
+  --bg-card: rgba(255,255,255,0.9);
   --text-main: #1a1a1a;
   --accent: #7a4cff;
   --accent-soft: rgba(122, 76, 255, 0.2);
@@ -25,22 +25,32 @@
 /* =========================================================
    BASE
    ========================================================= */
+* {
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
+}
+
 body {
   margin: 0;
   font-family: var(--font-main);
   color: var(--text-main);
   background: var(--bg-page);
-  font-weight: bold;
   position: relative;
 }
 
+/* Softer overlay (better readability) */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.3);
   pointer-events: none;
   z-index: -1;
+}
+
+/* Fix bold overuse */
+h1, h2, h3 {
+  font-weight: bold;
 }
 
 /* =========================================================
@@ -49,8 +59,11 @@ body::before {
 .site-header {
   padding: 1rem 0;
   backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.25);
+  background: rgba(0,0,0,0.3);
   border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -70,7 +83,7 @@ nav a {
   text-decoration: none;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 nav a:hover,
@@ -115,11 +128,15 @@ nav a.active {
   animation: fadeInUp 0.6s ease;
 }
 
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
 /* =========================================================
    BUTTONS
    ========================================================= */
-.purple-btn,
-.primary-btn {
+.btn {
   background: linear-gradient(135deg, #b38cff, #8f5fff);
   color: #fff;
   padding: 0.9rem 1.6rem;
@@ -132,8 +149,7 @@ nav a.active {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.purple-btn:hover,
-.primary-btn:hover {
+.btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(179, 140, 255, 0.4);
 }
@@ -199,11 +215,8 @@ nav a.active {
   animation: pawWalk 1.2s ease-in-out infinite;
 }
 
-.paw:nth-child(1) { animation-delay: 0s; }
-.paw:nth-child(2) { animation-delay: 0.1s; }
-.paw:nth-child(3) { animation-delay: 0.2s; }
-.paw:nth-child(4) { animation-delay: 0.3s; }
-.paw:nth-child(5) { animation-delay: 0.4s; }
+.paw:nth-child(odd) { animation-delay: 0.1s; }
+.paw:nth-child(even) { animation-delay: 0.3s; }
 
 @keyframes pawWalk {
   0%   { transform: translateY(0); opacity: 0.3; }
@@ -225,22 +238,20 @@ nav a.active {
 }
 
 .faq-modal.visible {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .faq-content {
   background: #0f0f1a;
   max-width: 600px;
   width: 90%;
-  margin: 60px auto;
-
   padding: 25px;
   border-radius: 12px;
-
   position: relative;
-
-  max-height: 80vh;      /* ✅ keeps inside screen */
-  overflow-y: auto;      /* ✅ enables vertical scroll */
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .faq-close {
@@ -249,7 +260,6 @@ nav a.active {
   color: var(--text-main);
   font-size: 2rem;
   cursor: pointer;
-  float: right;
 }
 
 /* =========================================================
@@ -266,28 +276,14 @@ nav a.active {
 }
 
 /* =========================================================
-   FOOTER
+   CONTACT FORM
    ========================================================= */
-.site-footer {
-  text-align: center;
-  padding: 2rem;
-}
-
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-/* Contact form container */
 .contact-form {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* All inputs, selects, and textarea */
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
@@ -295,22 +291,15 @@ nav a.active {
   padding: 12px;
   margin: 10px 0;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-subtle);
   font-size: 16px;
   box-sizing: border-box;
 }
 
-/* Fix dropdown arrow alignment */
-.contact-form select {
-  appearance: none;
-  background-color: #fff;
-}
-
-/* Button styling */
 .contact-form button {
   width: 100%;
   padding: 14px;
-  background: #7a3cff;
+  background: var(--accent);
   color: white;
   border: none;
   border-radius: 8px;
@@ -321,12 +310,23 @@ nav a.active {
 .contact-form button:hover {
   background: #692fe0;
 }
-/* Skip link (accessibility) */
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* =========================================================
+   SKIP LINK (ACCESSIBILITY)
+   ========================================================= */
 .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
-  background: #7a3cff;
+  background: var(--accent);
   color: white;
   padding: 10px 15px;
   border-radius: 6px;
@@ -334,7 +334,26 @@ nav a.active {
   transition: top 0.3s ease;
 }
 
-/* Show only when focused */
 .skip-link:focus {
   top: 10px;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   SCROLLBAR (BONUS)
+   ========================================================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
 }
