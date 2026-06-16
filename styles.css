@@ -357,3 +357,27 @@ nav a.active {
   background: var(--accent);
   border-radius: 10px;
 }
+/* ============================
+   THEME SWITCH BUTTON
+============================ */
+.theme-switch {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-size: 18px;
+  padding: 10px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.theme-switch:hover {
+  background: var(--accent-soft);
+  transform: scale(1.05);
+}
+
+/* Optional glow for dark theme */
+.theme-dark .theme-switch {
+  box-shadow: 0 0 8px rgba(179, 140, 255, 0.4);
+}
