@@ -293,3 +293,9 @@ button:hover {
     padding: 20px;
   }
 }
+.logo img {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
