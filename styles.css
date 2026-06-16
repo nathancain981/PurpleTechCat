@@ -43,10 +43,7 @@ body {
 .site-header,
 .nav-container,
 .page-section,
-.card,
-.content-with-cat,
-.content-left,
-.cat-right {
+.card {
   width: 100%;
   max-width: none;
   margin: 0;
@@ -88,8 +85,6 @@ img[src*="bio"] {
 }
 
 /* Cat images */
-.cat-right img,
-.cat-section img,
 img[src*="cat"],
 img[src*="focusedcodingcat"] {
   width: 220px;
@@ -264,8 +259,6 @@ button:hover {
     width: 140px;
   }
 
-  .cat-right img,
-  .cat-section img,
   img[src*="cat"],
   img[src*="focusedcodingcat"] {
     width: 160px;
