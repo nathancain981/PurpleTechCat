@@ -45,7 +45,10 @@ body {
 .site-header,
 .nav-container,
 .card,
-.page-section {
+.page-section,
+.content-with-cat,
+.content-left,
+.cat-right {
   width: 100%;
   max-width: none;
   margin: 0;
@@ -59,13 +62,43 @@ body {
   margin: 20px 0;
 }
 
-/* Universal logo fix */
+/* =========================================================
+   UNIVERSAL LOGO FIX
+========================================================= */
 img[src*="purpletechcatlogo"] {
   width: 160px;
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+/* =========================================================
+   GLOBAL IMAGE SIZING (Bio + Cat Images)
+========================================================= */
+
+/* Bio photo */
+.bio-photo,
+img[src*="nc"],
+img[src*="bio"] {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Cat mascot images */
+.cat-right img,
+.cat-section img,
+img[src*="cat"],
+img[src*="focusedcodingcat"] {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
 }
 
 /* =========================================================
@@ -96,7 +129,7 @@ nav a.active {
 }
 
 /* =========================================================
-   THEME TOGGLE (ALWAYS ON TOP)
+   THEME TOGGLE
 ========================================================= */
 .theme-toggle-btn {
   position: fixed;
@@ -112,7 +145,7 @@ nav a.active {
 }
 
 /* =========================================================
-   ACCESSIBILITY TOOLBAR (ALWAYS ON TOP)
+   ACCESSIBILITY TOOLBAR
 ========================================================= */
 .accessibility-toolbar {
   position: fixed;
@@ -139,7 +172,7 @@ nav a.active {
 }
 
 /* =========================================================
-   CARDS (FULL WIDTH)
+   CARDS
 ========================================================= */
 .card {
   background: var(--bg-card);
@@ -166,15 +199,6 @@ nav a.active {
   border-radius: var(--radius);
   background: #141414;
   border: 1px solid #222;
-}
-
-/* =========================================================
-   CAT IMAGE SECTION
-========================================================= */
-.cat-section img {
-  width: 260px;
-  display: block;
-  margin: auto;
 }
 
 /* =========================================================
@@ -307,30 +331,18 @@ button:hover {
     margin: 0;
     font-size: 15px;
   }
-@media (max-width: 600px) {
-  img[src*="cat.png"] {
-    width: 160px;
-  }
 
+  /* Mobile image sizing */
+  .bio-photo,
+  img[src*="nc"],
   img[src*="bio"] {
     width: 140px;
   }
-}
-/* Cat mascot image (cat.png) */
-img[src*="cat.png"] {
-  width: 220px;      /* medium size */
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-}
 
-/* Bio photo (bio-photo.png or similar) */
-img[src*="bio-photo"] {
-  width: 180px;      /* medium-small */
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-  margin: 20px auto;
+  .cat-right img,
+  .cat-section img,
+  img[src*="cat"],
+  img[src*="focusedcodingcat"] {
+    width: 160px;
+  }
 }
