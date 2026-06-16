@@ -292,3 +292,38 @@ button:hover {
     padding: 20px;
   }
 }
+/* MOBILE FIX FOR HEADER + LOGO + NAV */
+@media (max-width: 600px) {
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 120px; /* scales logo properly */
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .card {
+    width: 94%;
+    padding: 20px;
+  }
+}
