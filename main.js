@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const body = document.body;
 
-  // ============================
-  // THEME TOGGLE
-  // ============================
+  /* =========================================================
+     THEME TOGGLE
+  ========================================================= */
   const themeToggle = document.getElementById("theme-toggle");
 
   if (themeToggle) {
-    const saved = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("theme");
 
-    if (saved === "light") {
+    if (savedTheme === "light") {
       body.classList.add("theme-light");
       themeToggle.textContent = "☀️";
     } else {
@@ -19,94 +19,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
     themeToggle.addEventListener("click", () => {
       const isLight = body.classList.toggle("theme-light");
-
       localStorage.setItem("theme", isLight ? "light" : "dark");
       themeToggle.textContent = isLight ? "☀️" : "🌙";
     });
   }
 
-  // ============================
-// ACCESSIBILITY BUTTONS
-// ============================
+  /* =========================================================
+     ACCESSIBILITY TOOLS
+  ========================================================= */
 
-const body = document.body;
+  const btnInc = document.getElementById("a11y-font-inc");
+  const btnDec = document.getElementById("a11y-font-dec");
+  const btnContrast = document.getElementById("a11y-contrast-toggle");
+  const btnDys = document.getElementById("a11y-dyslexic-toggle");
+  const btnReset = document.getElementById("a11y-reset");
 
-const ids = [
-  "a11y-font-inc",
-  "a11y-font-dec",
-  "a11y-contrast-toggle",
-  "a11y-dyslexic-toggle",
-  "a11y-reset"
-];
+  // Increase font size
+  btnInc?.addEventListener("click", () => {
+    body.classList.remove("font-small");
+    body.classList.add("font-large");
+  });
 
-console.log("Buttons found:");
+  // Decrease font size
+  btnDec?.addEventListener("click", () => {
+    body.classList.remove("font-large");
+    body.classList.add("font-small");
+  });
 
-ids.forEach(id => {
-  const btn = document.getElementById(id);
-  console.log(id, btn);
-});
+  // High contrast mode
+  btnContrast?.addEventListener("click", () => {
+    body.classList.toggle("high-contrast");
+  });
 
-// Buttons
-const inc = document.getElementById("a11y-font-inc");
-const dec = document.getElementById("a11y-font-dec");
-const contrast = document.getElementById("a11y-contrast-toggle");
-const dys = document.getElementById("a11y-dyslexic-toggle");
-const reset = document.getElementById("a11y-reset");
+  // Dyslexia-friendly font
+  btnDys?.addEventListener("click", () => {
+    body.classList.toggle("dyslexic-font");
+  });
 
-// Increase font
-inc?.addEventListener("click", () => {
-  console.log("A+ clicked");
-  body.classList.remove("font-small");
-  body.classList.add("font-large");
-});
+  // Reset all accessibility settings
+  btnReset?.addEventListener("click", () => {
+    body.classList.remove(
+      "font-small",
+      "font-large",
+      "high-contrast",
+      "dyslexic-font",
+      "theme-light"
+    );
 
-// Decrease font
-dec?.addEventListener("click", () => {
-  console.log("A- clicked");
-  body.classList.remove("font-large");
-  body.classList.add("font-small");
-});
+    localStorage.removeItem("theme");
+  });
 
-// Contrast
-contrast?.addEventListener("click", () => {
-  console.log("Contrast clicked");
-  body.classList.toggle("high-contrast");
-});
+  /* =========================================================
+     FAQ MODAL
+  ========================================================= */
 
-// Dyslexia font
-dys?.addEventListener("click", () => {
-  console.log("Dys clicked");
-  body.classList.toggle("dyslexic-font");
-});
+  const faqModal = document.getElementById("faq-modal");
+  const openFaq = document.getElementById("open-faq");
+  const closeFaq = document.getElementById("close-faq");
 
-// Reset
-reset?.addEventListener("click", () => {
-  console.log("Reset clicked");
+  // Open FAQ
+  openFaq?.addEventListener("click", () => {
+    faqModal?.classList.add("visible");
+  });
 
-  body.classList.remove(
-    "font-small",
-    "font-large",
-    "high-contrast",
-    "dyslexic-font"
-  );
+  // Close FAQ
+  closeFaq?.addEventListener("click", () => {
+    faqModal?.classList.remove("visible");
+  });
 
-  body.classList.remove("theme-light");
-  body.classList.add("theme-dark");
+  // Close when clicking outside the FAQ box
+  faqModal?.addEventListener("click", (e) => {
+    if (e.target === faqModal) {
+      faqModal.classList.remove("visible");
+    }
+  });
 
-  localStorage.clear();
-});
+  // Close with ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      faqModal?.classList.remove("visible");
+    }
+  });
 
-});
-// Close when clicking outside the FAQ box
-faqModal.addEventListener("click", (e) => {
-  if (e.target === faqModal) {
-    faqModal.classList.remove("visible");
-  }
-});
-
-// Close with ESC key
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    faqModal.classList.remove("visible");
-  }
 });
