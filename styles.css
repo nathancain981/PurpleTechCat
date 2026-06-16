@@ -326,7 +326,7 @@ img[src*="cat.png"] {
 }
 
 /* Bio photo (bio-photo.png or similar) */
-img[src*="bio"] {
+img[src*="bio-photo"] {
   width: 180px;      /* medium-small */
   max-width: 100%;
   height: auto;
