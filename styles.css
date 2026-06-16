@@ -1,383 +1,43 @@
-/* =========================================================
-   ROOT VARIABLES
-   ========================================================= */
-:root {
-  --bg-page: #0b0b12;
-  --bg-card: rgba(15, 15, 25, 0.9);
-  --text-main: #f5f5ff;
-  --accent: #b38cff;
-  --accent-soft: rgba(179, 140, 255, 0.2);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --danger: #ff6b6b;
-  --font-main: system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-
-/* Light theme */
-.theme-light {
-  --bg-page: #f5f5ff;
-  --bg-card: rgba(255,255,255,0.9);
-  --text-main: #1a1a1a;
-  --accent: #7a4cff;
-  --accent-soft: rgba(122, 76, 255, 0.2);
-  --border-subtle: rgba(0,0,0,0.1);
-}
-
-/* =========================================================
-   BASE
-   ========================================================= */
-* {
-  box-sizing: border-box;
-  transition: background 0.3s, color 0.3s;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-main);
-  color: var(--text-main);
-  background: var(--bg-page);
-  position: relative;
-}
-
-/* Softer overlay (better readability) */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Fix bold overuse */
-h1, h2, h3 {
-  font-weight: bold;
-}
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-.site-header {
-  padding: 1rem 0;
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.3);
-  border-bottom: 1px solid var(--border-subtle);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-container {
-  width: min(1200px, 100% - 2rem);
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo img {
-  height: 48px;
-}
-
-nav a {
-  color: var(--text-main);
-  text-decoration: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  transition: all 0.2s ease;
-}
-
-nav a:hover,
-nav a.active {
-  background: var(--accent-soft);
-}
-
-/* =========================================================
-   LAYOUT
-   ========================================================= */
-.content-with-cat {
-  display: flex;
-  gap: 2rem;
-  width: min(1200px, 100% - 2rem);
-  margin: 2rem auto;
-}
-
-.cat-right img {
-  width: 320px;
-}
-
-@media (max-width: 900px) {
-  .content-with-cat {
-    flex-direction: column;
-    text-align: center;
-  }
-  .cat-right img {
-    width: 240px;
-  }
-}
-
-/* =========================================================
-   CARDS
-   ========================================================= */
-.card {
-  background: var(--bg-card);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: 1px solid var(--border-subtle);
-  margin: 1rem auto;
-  max-width: 650px;
-  animation: fadeInUp 0.6s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-.btn {
-  background: linear-gradient(135deg, #b38cff, #8f5fff);
-  color: #fff;
-  padding: 0.9rem 1.6rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(179, 140, 255, 0.4);
-}
-
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-.accessibility-toolbar {
-  position: fixed;
-  right: 10px;
-  top: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.a11y-btn {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  padding: 0.4rem 0.6rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  color: var(--text-main);
-  font-weight: bold;
-}
-
-.a11y-btn:hover {
-  background: var(--accent-soft);
-}
-
-/* Font size */
-.font-small { font-size: 0.9rem; }
-.font-large { font-size: 1.15rem; }
-.font-xlarge { font-size: 1.3rem; }
-
-/* High contrast */
-.high-contrast {
-  --bg-page: #000;
-  --bg-card: #000;
-  --text-main: #fff;
-  --accent: #ffea00;
-  --accent-soft: rgba(255, 234, 0, 0.2);
-  --border-subtle: #fff;
-}
-
-/* Dyslexia font */
-.dyslexic-font {
-  font-family: "OpenDyslexic", Arial, sans-serif;
-}
-
-/* =========================================================
-   PAW ANIMATION
-   ========================================================= */
-.paw-track {
-  display: flex;
-  justify-content: center;
-  gap: 0.8rem;
-  margin: 1rem 0;
-}
-
-.paw {
-  font-size: 1.4rem;
-  animation: pawWalk 1.2s ease-in-out infinite;
-}
-
-.paw:nth-child(odd) { animation-delay: 0.1s; }
-.paw:nth-child(even) { animation-delay: 0.3s; }
-
-@keyframes pawWalk {
-  0%   { transform: translateY(0); opacity: 0.3; }
-  50%  { transform: translateY(-6px); opacity: 1; }
-  100% { transform: translateY(0); opacity: 0.3; }
-}
-
-/* =========================================================
-   FAQ MODAL
-   ========================================================= */
-.faq-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(4px);
-  z-index: 9999;
-  padding: 2rem;
-}
-
-.faq-modal.visible {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.faq-content {
-  background: #0f0f1a;
-  max-width: 600px;
-  width: 90%;
-  padding: 25px;
-  border-radius: 12px;
-  position: relative;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-.faq-close {
-  background: none;
-  border: none;
-  color: var(--text-main);
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* =========================================================
-   PROFILE PHOTO
-   ========================================================= */
-.bio-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 1rem;
-  border: 3px solid var(--accent);
-}
-
-/* =========================================================
-   CONTACT FORM
-   ========================================================= */
-.contact-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid var(--border-subtle);
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.contact-form button {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #692fe0;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-.site-footer {
-  text-align: center;
-  padding: 2rem;
-}
-
-/* =========================================================
-   SKIP LINK (ACCESSIBILITY)
-   ========================================================= */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--accent);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
-  z-index: 1000;
-  transition: top 0.3s ease;
-}
-
-.skip-link:focus {
-  top: 10px;
-}
-
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* =========================================================
-   SCROLLBAR (BONUS)
-   ========================================================= */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
-}
 /* ============================
-   THEME SWITCH BUTTON
+   THEME TOGGLE BUTTON
 ============================ */
-.theme-switch {
+.theme-toggle-btn {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   color: var(--text-main);
-  font-size: 18px;
+
+  font-size: 22px;
   padding: 10px 14px;
-  border-radius: 50px;
+  border-radius: 999px;
+
   cursor: pointer;
-  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.25s ease;
 }
 
-/* Hover effect */
-.theme-switch:hover {
+/* Hover */
+.theme-toggle-btn:hover {
   background: var(--accent-soft);
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-/* Optional glow for dark theme */
-.theme-dark .theme-switch {
-  box-shadow: 0 0 8px rgba(179, 140, 255, 0.4);
+/* Click */
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Glow in dark mode */
+.theme-dark .theme-toggle-btn {
+  box-shadow: 0 0 10px rgba(179, 140, 255, 0.5);
+}
+
+/* Position (optional but recommended) */
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
 }
