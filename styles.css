@@ -1,6 +1,4 @@
-/* =========================================================
-   ROOT VARIABLES
-========================================================= */
+/* ROOT VARIABLES */
 :root {
   --bg: #0f0f0f;
   --bg-card: #1a1a1a;
@@ -11,18 +9,7 @@
   --transition: 0.25s ease;
 }
 
-/* Light theme */
-.theme-light {
-  --bg: #ffffff;
-  --bg-card: #f5f5f5;
-  --text-main: #111111;
-  --text-subtle: #444444;
-  --accent: #7b2cff;
-}
-
-/* =========================================================
-   GLOBAL RESET
-========================================================= */
+/* GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
@@ -34,69 +21,9 @@ body {
   color: var(--text-main);
   font-family: system-ui, sans-serif;
   line-height: 1.6;
-  transition: background var(--transition), color var(--transition);
 }
 
-/* =========================================================
-   FULL-WIDTH LAYOUT SYSTEM
-========================================================= */
-.site-header,
-.nav-container,
-.page-section,
-.card {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Center logo */
-.logo {
-  text-align: center;
-  margin: 20px 0;
-}
-
-/* =========================================================
-   UNIVERSAL LOGO FIX
-========================================================= */
-img[src*="purpletechcatlogo"] {
-  width: 160px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/* =========================================================
-   GLOBAL IMAGE SIZING
-========================================================= */
-
-/* Bio photo */
-.bio-photo,
-img[src*="nc"],
-img[src*="bio"] {
-  width: 180px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-  margin: 20px auto;
-}
-
-/* Cat images */
-img[src*="cat"],
-img[src*="focusedcodingcat"] {
-  width: 220px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-}
-
-/* =========================================================
-   HEADER + NAV
-========================================================= */
+/* HEADER + NAV */
 .site-header {
   background: var(--bg-card);
   padding: 15px 0;
@@ -104,9 +31,18 @@ img[src*="focusedcodingcat"] {
 }
 
 .nav-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.logo img {
+  width: 160px;
+  height: auto;
+  display: block;
 }
 
 nav a {
@@ -121,71 +57,47 @@ nav a.active {
   color: var(--accent);
 }
 
-/* =========================================================
-   THEME TOGGLE
-========================================================= */
-.theme-toggle-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--bg-card);
-  border: 1px solid #333;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 99999;
-  transition: var(--transition);
+/* PAGE WRAPPER */
+.page-section {
+  width: 90%;
+  max-width: 1100px;
+  margin: 30px auto;
 }
 
-/* =========================================================
-   ACCESSIBILITY TOOLBAR
-========================================================= */
-.accessibility-toolbar {
-  position: fixed;
-  top: 100px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 99999;
-}
-
-.a11y-btn {
-  background: var(--bg-card);
-  border: 1px solid #333;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  color: var(--text-main);
-  transition: var(--transition);
-}
-
-.a11y-btn:hover {
-  background: var(--accent);
-}
-
-/* =========================================================
-   CARDS
-========================================================= */
+/* CARDS */
 .card {
   background: var(--bg-card);
   padding: 25px;
   border-radius: var(--radius);
   border: 1px solid #222;
-  margin: 25px 0;
+  margin-bottom: 25px;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO TITLE */
 .typing {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
-/* =========================================================
-   BUTTONS
-========================================================= */
+/* IMAGES */
+.bio-photo {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 20px auto;
+}
+
+img[src*="cat"] {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* BUTTONS */
 .purple-btn,
 button {
   background: var(--accent);
@@ -202,65 +114,31 @@ button:hover {
   opacity: 0.85;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 .site-footer {
   text-align: center;
   padding: 20px;
   color: var(--text-subtle);
 }
 
-/* =========================================================
-   MOBILE RESPONSIVE
-========================================================= */
+/* MOBILE */
 @media (max-width: 600px) {
-
-  .theme-toggle-btn {
-    right: 10px;
-  }
-
-  .accessibility-toolbar {
-    right: 10px;
-    top: 80px;
-    transform: scale(0.9);
-  }
-
-  .typing {
-    font-size: 1.6rem;
-  }
-
   .nav-container {
     flex-direction: column;
-    align-items: center;
     gap: 10px;
     text-align: center;
   }
 
-  img[src*="purpletechcatlogo"] {
+  .logo img {
     width: 120px;
   }
 
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
   nav a {
-    margin: 0;
+    margin: 0 10px;
     font-size: 15px;
   }
 
-  /* Mobile image sizing */
-  .bio-photo,
-  img[src*="nc"],
-  img[src*="bio"] {
-    width: 140px;
-  }
-
-  img[src*="cat"],
-  img[src*="focusedcodingcat"] {
-    width: 160px;
+  .typing {
+    font-size: 1.6rem;
   }
 }
