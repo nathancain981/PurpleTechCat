@@ -100,5 +100,40 @@ document.addEventListener("DOMContentLoaded", () => {
       faqModal?.classList.remove("visible");
     }
   });
+/* =========================================================
+   SUPPORT HOURS STATUS (ONLINE / OFFLINE)
+========================================================= */
 
+const statusText = document.getElementById("statusText");
+
+if (statusText) {
+
+  // Support hours (local UK time)
+  const hours = [
+    { day: 2, start: 18, end: 22 }, // Tue 6pm–10pm
+    { day: 3, start: 18, end: 22 }, // Wed 6pm–10pm
+    { day: 4, start: 20, end: 22 }, // Thu 8pm–10pm
+    { day: 6, start: 7,  end: 10 }, // Sat 7am–10am
+    { day: 0, start: 7,  end: 10 }  // Sun 7am–10am
+  ];
+
+  function updateStatus() {
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours();
+
+    const active = hours.some(h => h.day === day && hour >= h.start && hour < h.end);
+
+    if (active) {
+      statusText.textContent = "🟢 Online — I'm available now";
+      statusText.style.color = "#4CAF50";
+    } else {
+      statusText.textContent = "🔴 Offline — I'll reply during support hours";
+      statusText.style.color = "#ff4d6d";
+    }
+  }
+
+  updateStatus();
+  setInterval(updateStatus, 60 * 1000); // update every minute
+}
 });
