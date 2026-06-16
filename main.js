@@ -7,25 +7,42 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================
   const themeToggle = document.getElementById("theme-toggle");
 
-  const saved = localStorage.getItem("theme");
+  if (themeToggle) {
+    const saved = localStorage.getItem("theme");
 
-  if (saved === "light") {
-    body.classList.add("theme-light");
-    themeToggle.textContent = "☀️";
-  } else {
-    themeToggle.textContent = "🌙";
+    if (saved === "light") {
+      body.classList.add("theme-light");
+      themeToggle.textContent = "☀️";
+    } else {
+      themeToggle.textContent = "🌙";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const isLight = body.classList.toggle("theme-light");
+
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+      themeToggle.textContent = isLight ? "☀️" : "🌙";
+    });
   }
-
-  themeToggle?.addEventListener("click", () => {
-    const isLight = body.classList.toggle("theme-light");
-
-    localStorage.setItem("theme", isLight ? "light" : "dark");
-    themeToggle.textContent = isLight ? "☀️" : "🌙";
-  });
 
   // ============================
   // ACCESSIBILITY BUTTONS
   // ============================
+  const ids = [
+    "a11y-font-inc",
+    "a11y-font-dec",
+    "a11y-contrast-toggle",
+    "a11y-dyslexic-toggle",
+    "a11y-reset"
+  ];
+
+  console.log("Buttons found:");
+
+  ids.forEach(id => {
+    const btn = document.getElementById(id);
+    console.log(id, btn);
+  });
+
   const inc = document.getElementById("a11y-font-inc");
   const dec = document.getElementById("a11y-font-dec");
   const contrast = document.getElementById("a11y-contrast-toggle");
@@ -33,27 +50,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const reset = document.getElementById("a11y-reset");
 
   inc?.addEventListener("click", () => {
+    console.log("A+ clicked");
     body.classList.remove("font-small");
     body.classList.add("font-large");
   });
 
   dec?.addEventListener("click", () => {
+    console.log("A- clicked");
     body.classList.remove("font-large");
     body.classList.add("font-small");
   });
 
   contrast?.addEventListener("click", () => {
+    console.log("Contrast clicked");
     body.classList.toggle("high-contrast");
   });
 
   dys?.addEventListener("click", () => {
+    console.log("Dys clicked");
     body.classList.toggle("dyslexic-font");
   });
 
   reset?.addEventListener("click", () => {
+    console.log("Reset clicked");
     body.className = "theme-dark";
     localStorage.clear();
-    themeToggle.textContent = "🌙";
   });
 
 });
