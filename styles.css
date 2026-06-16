@@ -1,199 +1,90 @@
 /* =========================================================
-   ROOT VARIABLES — CLEAN FUTURISTIC MINIMAL (2026)
+   ROOT VARIABLES
 ========================================================= */
 :root {
-  --bg-page: #0e0e14;
-  --bg-card: #16161f;
-  --text-main: #f5f5ff;
-  --accent: #a86bff;
-  --accent-soft: #c9aaff;
-  --border-subtle: rgba(255,255,255,0.08);
-  --font-main: "Segoe UI", sans-serif;
-
-  --radius: 14px;
+  --bg: #0f0f0f;
+  --bg-card: #1a1a1a;
+  --text-main: #ffffff;
+  --text-subtle: #cccccc;
+  --accent: #9b4dff;
+  --radius: 12px;
   --transition: 0.25s ease;
 }
 
-/* Light Mode */
+/* Light theme */
 .theme-light {
-  --bg-page: #f5f5ff;
-  --bg-card: #ffffff;
-  --text-main: #111;
-  --border-subtle: rgba(0,0,0,0.1);
+  --bg: #ffffff;
+  --bg-card: #f5f5f5;
+  --text-main: #111111;
+  --text-subtle: #444444;
+  --accent: #7b2cff;
 }
 
 /* =========================================================
-   GLOBAL
+   GLOBAL RESET
 ========================================================= */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-main);
-  background: var(--bg-page);
+  background: var(--bg);
   color: var(--text-main);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
   transition: background var(--transition), color var(--transition);
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Skip link */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 10px;
-  padding: 8px 12px;
-  background: var(--accent);
-  color: #fff;
-  border-radius: var(--radius);
-  transition: top var(--transition);
-}
-.skip-link:focus {
-  top: 10px;
-}
-
 /* =========================================================
-   HEADER / NAVBAR
+   HEADER + NAV
 ========================================================= */
 .site-header {
-  position: sticky;
-  top: 0;
-  background: rgba(0,0,0,0.25);
-  border-bottom: 1px solid var(--border-subtle);
-  backdrop-filter: blur(6px);
-  z-index: 100;
+  background: var(--bg-card);
+  padding: 15px 0;
+  border-bottom: 1px solid #222;
 }
 
 .nav-container {
-  max-width: 1200px;
+  width: 90%;
+  max-width: 1100px;
   margin: auto;
-  padding: 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.logo img {
-  height: 45px;
+  justify-content: space-between;
 }
 
 nav a {
-  color: var(--text-main);
+  margin-left: 20px;
+  color: var(--text-subtle);
   text-decoration: none;
-  margin: 0 10px;
-  padding: 6px 12px;
-  border-radius: var(--radius);
   transition: var(--transition);
 }
 
 nav a:hover,
 nav a.active {
-  background: var(--accent);
-  color: #fff;
+  color: var(--accent);
 }
 
 /* =========================================================
-   HERO
-========================================================= */
-.hero h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  opacity: 0.8;
-}
-
-/* =========================================================
-   LAYOUT
-========================================================= */
-.content-with-cat {
-  max-width: 1100px;
-  margin: auto;
-  padding: 30px;
-  display: flex;
-  gap: 2rem;
-}
-
-.content-left {
-  flex: 2;
-}
-
-.cat-right img {
-  width: 260px;
-  border-radius: var(--radius);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .content-with-cat {
-    flex-direction: column;
-    text-align: center;
-  }
-  .cat-right img {
-    margin: auto;
-  }
-}
-
-/* =========================================================
-   CARDS
-========================================================= */
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius);
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: var(--transition);
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-}
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-button,
-.purple-btn,
-.primary-btn {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  padding: 10px 16px;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-button:hover,
-.purple-btn:hover,
-.primary-btn:hover {
-  background: var(--accent-soft);
-}
-
-/* =========================================================
-   THEME TOGGLE
+   THEME TOGGLE (ALWAYS ON TOP)
 ========================================================= */
 .theme-toggle-btn {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 9999; /* keeps it above all content */
-}
-
-.theme-toggle-btn:hover {
-  transform: scale(1.1);
+  background: var(--bg-card);
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99999;
+  transition: var(--transition);
 }
 
 /* =========================================================
-   ACCESSIBILITY TOOLBAR
+   ACCESSIBILITY TOOLBAR (ALWAYS ON TOP)
 ========================================================= */
 .accessibility-toolbar {
   position: fixed;
@@ -202,64 +93,104 @@ button:hover,
   display: flex;
   flex-direction: column;
   gap: 8px;
-  z-index: 9999; /* stays above everything */
+  z-index: 99999;
 }
 
 .a11y-btn {
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  padding: 8px;
-  border-radius: var(--radius);
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
   color: var(--text-main);
   transition: var(--transition);
 }
 
 .a11y-btn:hover {
   background: var(--accent);
-  color: #fff;
-}
-
-/* Accessibility modes */
-.font-small { font-size: 14px; }
-.font-large { font-size: 22px; }
-
-.high-contrast {
-  background: #000 !important;
-  color: #fff !important;
-}
-
-.high-contrast .card {
-  background: #000 !important;
-  border: 2px solid yellow !important;
-}
-
-.dyslexic-font {
-  font-family: "Comic Sans MS", Arial, sans-serif;
 }
 
 /* =========================================================
-   PROFILE PHOTO
+   CARDS (FULL WIDTH SECTIONS)
 ========================================================= */
-.bio-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent);
-  margin: 0 auto 10px;
+.card {
+  width: 90%;
+  max-width: 1100px;
+  margin: 25px auto;
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: var(--radius);
+  border: 1px solid #222;
+  position: relative;
+  z-index: 1;
 }
 
 /* =========================================================
-   FAQ POP-UP (MODAL)
+   HERO
+========================================================= */
+.typing {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+.service-card {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: var(--radius);
+  background: #141414;
+  border: 1px solid #222;
+}
+
+/* =========================================================
+   CAT IMAGE SECTION
+========================================================= */
+.cat-section img {
+  width: 260px;
+  display: block;
+  margin: auto;
+}
+
+/* =========================================================
+   STATUS SECTION
+========================================================= */
+.status-card {
+  text-align: center;
+  font-size: 18px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.purple-btn,
+button {
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.purple-btn:hover,
+button:hover {
+  opacity: 0.85;
+}
+
+/* =========================================================
+   FAQ MODAL
 ========================================================= */
 .faq-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   display: none;
-  justify-content: center;
   align-items: center;
-  z-index: 9999;
+  justify-content: center;
+  z-index: 9000; /* BELOW TOOLBAR */
 }
 
 .faq-modal.visible {
@@ -268,30 +199,22 @@ button:hover,
 
 .faq-content {
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius);
   padding: 25px;
+  border-radius: var(--radius);
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
   max-height: 80vh;
   overflow-y: auto;
+  border: 1px solid #333;
 }
 
-.faq-item {
-  margin-bottom: 15px;
-}
-
-.faq-item h3 {
-  color: var(--accent);
-}
-
-/* Close button */
-#close-faq {
+.faq-close {
   float: right;
-  background: #ff4d6d;
-  border-radius: var(--radius);
-  padding: 6px 12px;
-  margin-bottom: 10px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--text-main);
+  cursor: pointer;
 }
 
 /* =========================================================
@@ -300,37 +223,41 @@ button:hover,
 .site-footer {
   text-align: center;
   padding: 20px;
-  opacity: 0.6;
+  color: var(--text-subtle);
 }
 
 /* =========================================================
-   SCROLLBAR
+   ACCESSIBILITY MODES
 ========================================================= */
-::-webkit-scrollbar {
-  width: 8px;
+.font-large { font-size: 120%; }
+.font-small { font-size: 90%; }
+
+.high-contrast {
+  --bg: #000;
+  --bg-card: #000;
+  --text-main: #fff;
+  --accent: #ffea00;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: var(--radius);
-}
-/* Form fields */
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-card);
-  color: var(--text-main);
-  transition: var(--transition);
+.dyslexic-font {
+  font-family: "OpenDyslexic", Arial, sans-serif;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: var(--accent);
-  outline: none;
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+@media (max-width: 600px) {
+  .theme-toggle-btn {
+    right: 10px;
+  }
+
+  .accessibility-toolbar {
+    right: 10px;
+    top: 80px;
+    transform: scale(0.9);
+  }
+
+  .typing {
+    font-size: 1.6rem;
+  }
 }
