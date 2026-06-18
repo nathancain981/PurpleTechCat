@@ -1,73 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <title>PurpleTechCat – Contact</title>
-  <link rel="stylesheet" href="styles.css?v=53">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="theme-dark">
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="purpletechcat-logo.png" alt="PurpleTechCat logo">
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="gdpr.html">GDPR</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+    </div>
+  </header>
 
-<header class="site-header">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <img src="purpletechcatlogo.png" alt="PurpleTechCat Logo">
-    </a>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="gdpr.html">GDPR</a>
-    </nav>
-
-    <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
-  </div>
-</header>
-
-<main id="main-content">
-
-  <div class="page-section">
-
-    <h1 class="typing">Contact Nathan</h1>
-    <p>Have a question, want to collaborate, or just want to say hello?</p>
-
+  <main>
     <section class="card">
+      <h1>Contact</h1>
+      <p>Use this form to ask for tech help or to discuss a project.</p>
 
-      <form>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
+      <form class="contact-form">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
 
-        <select>
-          <option>Select a topic…</option>
-          <option>General Question</option>
-          <option>Tech Support</option>
-          <option>Collaboration</option>
-        </select>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
 
-        <textarea placeholder="Your message…" rows="5"></textarea>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
 
-        <button class="purple-btn">Send Message</button>
+        <button type="submit" class="purple-btn">Send message</button>
       </form>
-
     </section>
+  </main>
 
-    <section class="card">
-      <h2>Connect with Me</h2>
-      <p>You can also reach me on LinkedIn for professional enquiries.</p>
-      <a href="https://www.linkedin.com" class="purple-btn">Connect with Nathan on LinkedIn</a>
-    </section>
-
-  </div>
-
-</main>
-
-<footer class="site-footer">
-  <p>© PurpleTechCat</p>
-</footer>
-
-<script src="main.js?v=46"></script>
-
+  <script src="main.js"></script>
 </body>
 </html>
