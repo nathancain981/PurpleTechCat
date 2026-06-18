@@ -1,63 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <title>PurpleTechCat – About</title>
-  <link rel="stylesheet" href="styles.css?v=53">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="theme-dark">
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="purpletechcat-logo.png" alt="PurpleTechCat logo">
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="gdpr.html">GDPR</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+    </div>
+  </header>
 
-<header class="site-header">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <img src="purpletechcatlogo.png" alt="PurpleTechCat Logo">
-    </a>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="gdpr.html">GDPR</a>
-    </nav>
-
-    <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
-  </div>
-</header>
-
-<main id="main-content">
-
-  <div class="page-section">
-
-    <h1 class="typing">About Nathan</h1>
-    <p>This is me — the person behind PurpleTechCat.</p>
-
-    <img src="nc.jpg" alt="Nathan Cain" class="bio-photo">
-
+  <main>
     <section class="card">
-      <h2>My Biography</h2>
-
-      <p>I’m Nathan, an IT student from the L25 area who enjoys helping people feel confident with technology.</p>
-
-      <p>I’m currently building my own home IT lab, working with virtual machines, Linux systems and real troubleshooting to grow my skills since February 2026.</p>
-
-      <p>Before this, I spent two years as a Volunteer IT Officer at Deaf Active, where I refurbished my Digital Hub page (WordPress), supported Google Workspace and Apps Script automation, delivered IT sessions, and carried out Windows 10–11 migrations with safe file backups.</p>
-
-      <p>PurpleTechCat brings together my IT skills, accessibility experience and community background to offer free, friendly and local tech support.</p>
+      <h1>About PurpleTechCat</h1>
+      <p>Hi, I’m Nathan – a volunteer IT support enthusiast based in L25.</p>
+      <p>I support local people and organisations with hardware, software, and digital accessibility, with clear, patient explanations.</p>
     </section>
 
-    <img src="focusedcodingcat.png" alt="Focused Coding Cat">
+    <section class="card">
+      <h2>Experience</h2>
+      <ul>
+        <li>Volunteer IT & digital support for community organisations</li>
+        <li>Frontend web development and UI design</li>
+        <li>Virtualisation and Linux systems</li>
+      </ul>
+    </section>
+  </main>
 
-  </div>
-
-</main>
-
-<footer class="site-footer">
-  <p>© PurpleTechCat</p>
-</footer>
-
-<script src="main.js?v=46"></script>
-
+  <script src="main.js"></script>
 </body>
 </html>
