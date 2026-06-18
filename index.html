@@ -60,13 +60,11 @@
     <div class="service-card"><h3>🔒 Security</h3><p>I help keep devices and accounts safe from risks.</p></div>
   </section>
 
-  <!-- CAT IMAGE (FULL WIDTH, CENTERED) -->
-  <section class="card" style="text-align:center;">
-    <img src="happyitcat.png" alt="Happy IT Cat" style="width:260px; margin:auto;">
-  </section>
+  <!-- SUPPORT HUB CARD (CAT + STATUS + BOOKING) -->
+<section class="card status-card" style="text-align:center;">
 
-  <!-- STATUS + BOOKING (MERGED INTO ONE CARD) -->
-<section class="card status-card">
+  <!-- CAT IMAGE -->
+  <img src="happyitcat.png" alt="Happy IT Cat" style="width:260px; margin:0 auto 18px auto;">
 
   <!-- REAL-TIME STATUS -->
   <div id="statusBox">
@@ -79,20 +77,19 @@
     <p>Choose a time and I’ll guide you through it.</p>
 
     <div class="booking-frame">
+      <div id="bookingButtonMount"></div>
+
       <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
       <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
       <script>
-        (function() {
-          var target = document.currentScript;
-          window.addEventListener('load', function() {
-            calendar.schedulingButton.load({
-              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Vgl9g2jaRL83QUdQ8HwgLPEZI0bfZwefRbj59JMho2mUd840d69fUmgsqsMQSJpaM_ph-lG-i?gv=true',
-              color: '#8E24AA',
-              label: "Book IT Support",
-              target,
-            });
+        window.addEventListener('load', function() {
+          calendar.schedulingButton.load({
+            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Vgl9g2jaRL83QUdQ8HwgLPEZI0bfZwefRbj59JMho2mUd840d69fUmgsqsMQSJpaM_ph-lG-i?gv=true',
+            color: '#8E24AA',
+            label: "Book IT Support",
+            target: document.getElementById("bookingButtonMount")
           });
-        })();
+        });
       </script>
     </div>
   </div>
