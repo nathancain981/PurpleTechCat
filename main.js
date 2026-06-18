@@ -23,27 +23,6 @@ if (themeToggle) {
   });
 }
 
-/* ACCESSIBILITY TOOLS (SPECIAL-SCHOOL FRIENDLY) */
-const a11yButtons = document.querySelectorAll(".a11y-btn");
-let fontScale = Number(localStorage.getItem("ptc-font-scale") || "1");
-
-function applyFontScale() {
-  document.documentElement.style.fontSize = `${100 * fontScale}%`;
-}
-
-function applyA11yState() {
-  const contrast = localStorage.getItem("ptc-contrast") === "1";
-  const dyslexia = localStorage.getItem("ptc-dyslexia") === "1";
-  const motion = localStorage.getItem("ptc-motion") === "1";
-
-  document.body.classList.toggle("a11y-contrast", contrast);
-  document.body.classList.toggle("a11y-dyslexia", dyslexia);
-  document.body.classList.toggle("a11y-motion", motion);
-  applyFontScale();
-}
-
-applyA11yState();
-
 a11yButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     const action = btn.dataset.action;
