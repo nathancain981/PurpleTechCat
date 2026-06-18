@@ -4,98 +4,74 @@
   <meta charset="utf-8">
   <title>PurpleTechCat – GDPR & Privacy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css?v=60">
+  <link rel="stylesheet" href="styles.css?v=23">
 </head>
 
-<body>
+<body class="theme-dark">
 
-  <header class="site-header">
-    <div class="nav-container">
+<header class="site-header">
+  <div class="nav-container">
 
-      <!-- Clickable logo with correct filename -->
-      <a href="index.html" class="logo">
-        <img src="purpletechcatlogo.png" alt="PurpleTechCat logo">
-      </a>
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="purpletechcatlogo.png" alt="PurpleTechCat logo">
+    </a>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="gdpr.html" class="active">GDPR</a>
-      </nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="gdpr.html" class="active">GDPR</a>
+    </nav>
 
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
-    </div>
-  </header>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+  </div>
+</header>
 
-  <main>
+<main>
 
-    <!-- Floating Accessibility Button -->
-    <button id="a11y-open" class="a11y-floating-btn" aria-label="Accessibility menu">
-      ♿
-    </button>
+  <section class="card">
+    <h1>GDPR & Privacy</h1>
+    <p>This page explains how your information is used.</p>
 
-    <!-- Accessibility Pop-up -->
-    <div id="a11y-popup" class="a11y-popup hidden">
-      <div class="a11y-popup-content card">
-        <h2>Accessibility tools</h2>
+    <h2>What I may collect?</h2>
+    <ul>
+      <li>Your name and email (from the contact form)</li>
+      <li>Details about your device or issue, if needed for support</li>
+    </ul>
 
-        <div class="accessibility-toolbar">
-          <button class="a11y-btn" data-action="font-dec">A−</button>
-          <button class="a11y-btn" data-action="font-inc">A+</button>
-          <button class="a11y-btn" data-action="contrast">High contrast</button>
-          <button class="a11y-btn" data-action="dyslexia">Dyslexia font</button>
-          <button class="a11y-btn" data-action="motion">Reduce motion</button>
-          <button class="a11y-btn" data-action="reset">Reset</button>
-        </div>
+    <h2>Why I collect your information?</h2>
+    <p>I only use your information so I can reply to you and give the support you asked for.</p>
+    <p>I do not sell your data. I do not share it with anyone unless the law says I must.</p>
 
-        <button id="a11y-close" class="purple-btn a11y-close-btn">Close</button>
-      </div>
-    </div>
+    <h2>Your Data Rights</h2>
+    <p>You have rights over your personal data. These rights help you stay in control.</p>
 
-<section class="card">
-  <h1>GDPR & Privacy</h1>
-  <p>Any information you share is used only to respond to your enquiry or provide agreed support.</p>
+    <h3>Your rights include</h3>
+    <ul>
+      <li>Seeing the data I hold about you</li>
+      <li>Asking me to fix wrong information</li>
+      <li>Asking me to delete your data</li>
+      <li>Asking how your data is used</li>
+    </ul>
 
-  <h2>What I may collect?</h2>
-  <ul>
-    <li>Contact details you provide (such as name and email)</li>
-    <li>Details about your device or issue, when relevant to support</li>
-  </ul>
+    <h3>Subject Access Request (SAR)</h3>
+    <p>A SAR means you can ask for a copy of the personal data I hold about you.</p>
+    <p>You can make a SAR using the contact form. I will reply within one month.</p>
 
-  <h2>Your Data Rights</h2>
-  <p>This page explains your rights. It tells you how your data is used and how you can ask for it.</p>
+    <h3>Freedom of Information (FOI)</h3>
+    <p>An FOI request lets you ask for general information about how PurpleTechCat works.</p>
+    <p>FOI is for information, not personal data.</p>
 
-  <h3>What data we collect?</h3>
-  <p>We only collect the information you give us. This is usually your name, email and message from the contact form.</p>
+    <h3>How long I keep your data?</h3>
+    <p>I only keep your information for as long as needed to provide support. After that, it is safely deleted.</p>
 
-  <h3>Why we collect it?</h3>
-  <p>We use your information so we can reply to you and help you. We do not sell your data. We do not share it with anyone unless the law says we must.</p>
+    <h3>How to contact me?</h3>
+    <p>If you want to make a SAR or FOI request, please use the contact form. I will explain things in a clear and friendly way.</p>
+  </section>
 
-  <h3>Your rights</h3>
-  <p>You have rights over your data. These include:</p>
-  <ul>
-    <li>Seeing the data we hold about you</li>
-    <li>Asking us to fix wrong information</li>
-    <li>Asking us to delete your data</li>
-  </ul>
+</main>
 
-  <h3>Subject Access Request (SAR)</h3>
-  <p>A SAR means you can ask for a copy of the personal data we hold about you. You can ask for this using the contact form.</p>
-
-  <h3>Freedom of Information (FOI)</h3>
-  <p>An FOI means you can ask for general information about how PurpleTechCat works. FOI is for information, not personal data.</p>
-
-  <p>We will reply to SAR and FOI requests within one month.</p>
-
-  <h3>How to contact us?</h3>
-  <p>If you want to make a SAR or FOI request, please use the contact form. We will explain things in a clear and friendly way.</p>
-</section>
-
-    </section>
-
-  </main>
-
-  <script src="main.js?v=60"></script>
+<script src="main.js"></script>
 </body>
 </html>
