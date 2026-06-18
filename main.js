@@ -141,7 +141,7 @@ function checkStatus() {
     statusBox.classList.add("online");
     statusBox.classList.remove("offline");
   } else {
-    statusText.textContent = "🟣 Nathan is offline";
+    statusText.textContent = "🔴 Nathan is offline";
     statusBox.classList.add("offline");
     statusBox.classList.remove("online");
   }
