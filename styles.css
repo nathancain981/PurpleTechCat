@@ -1,8 +1,10 @@
 /* =========================================================
-   BASE THEME
+   THEME VARIABLES
 ========================================================= */
+
+/* Brand accent (you can change this to any colour) */
 :root {
-  --accent: #8e24aa; /* your brand colour */
+  --accent: #8e24aa;
   --accent-soft: rgba(142, 36, 170, 0.35);
   --accent-bg: rgba(142, 36, 170, 0.12);
 }
@@ -24,10 +26,13 @@ body.theme-light {
 }
 
 /* =========================================================
-   GLOBAL LAYOUT
+   GLOBAL
 ========================================================= */
+
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
   font-family: system-ui, sans-serif;
   line-height: 1.6;
 }
@@ -39,8 +44,9 @@ main {
 }
 
 /* =========================================================
-   HEADER + LOGO
+   HEADER + NAV
 ========================================================= */
+
 .site-header {
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
@@ -61,13 +67,10 @@ main {
   height: auto;
 }
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
 nav a {
   margin-left: 18px;
   text-decoration: none;
-  color: var(--text-light);
+  color: var(--text);
   opacity: 0.8;
 }
 
@@ -80,25 +83,27 @@ nav a:hover {
 /* =========================================================
    CARDS
 ========================================================= */
+
 .card {
-  background: var(--card-bg-dark);
+  background: var(--card-bg);
   padding: 22px;
   border-radius: 14px;
   margin-bottom: 22px;
-  border: 1px solid var(--accent-soft);
+  border: 1px solid var(--border);
 }
 
 /* =========================================================
    STATUS BOX
 ========================================================= */
+
 #statusBox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 10px 16px;
   border-radius: 999px;
-  background: rgba(5, 3, 10, 0.9);
-  border: 1px solid rgba(155, 77, 255, 0.35);
+  background: var(--card-bg);
+  border: 1px solid var(--accent-soft);
   margin-bottom: 16px;
   transition: background 0.2s, border 0.2s;
 }
@@ -109,13 +114,14 @@ nav a:hover {
 }
 
 #statusBox.offline {
-  background: rgba(255, 80, 120, 0.12);
-  border-color: rgba(255, 80, 120, 0.35);
+  background: var(--accent-bg);
+  border-color: var(--accent-soft);
 }
 
 /* =========================================================
    TWO-COLUMN LAYOUT (STATUS LEFT, CAT RIGHT)
 ========================================================= */
+
 .support-row {
   display: flex;
   align-items: center;
@@ -134,7 +140,7 @@ nav a:hover {
   display: block;
 }
 
-/* Mobile: stack vertically */
+/* Mobile layout */
 @media (max-width: 720px) {
   .support-row {
     flex-direction: column;
@@ -144,6 +150,7 @@ nav a:hover {
 /* =========================================================
    BOOKING SECTION
 ========================================================= */
+
 .booking-section h2 {
   margin-top: 10px;
   font-size: 1.3rem;
@@ -157,6 +164,7 @@ nav a:hover {
 /* =========================================================
    ACCESSIBILITY TOOLBAR
 ========================================================= */
+
 .accessibility-toolbar {
   display: flex;
   gap: 10px;
@@ -166,14 +174,15 @@ nav a:hover {
 .a11y-btn {
   padding: 6px 10px;
   border-radius: 6px;
-  border: 1px solid var(--accent-soft);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-light);
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
 }
 
 /* =========================================================
    PAW ANIMATION
 ========================================================= */
+
 .paw-track {
   display: flex;
   gap: 6px;
@@ -194,6 +203,7 @@ nav a:hover {
 /* =========================================================
    FAQ MODAL
 ========================================================= */
+
 .faq-modal {
   position: fixed;
   inset: 0;
@@ -205,9 +215,9 @@ nav a:hover {
 }
 
 .faq-content {
-  background: var(--card-bg-dark);
+  background: var(--card-bg);
   padding: 22px;
   border-radius: 14px;
   width: min(600px, 90%);
-  border: 1px solid var(--accent-soft);
+  border: 1px solid var(--border);
 }
