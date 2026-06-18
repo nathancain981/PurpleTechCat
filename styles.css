@@ -461,3 +461,18 @@ textarea::placeholder {
     bottom: 14px;
   }
 }
+/* merged booking section spacing */
+.booking-section {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.booking-section h2 {
+  margin-top: 12px;
+  font-size: 1.25rem;
+}
+
+.booking-section p {
+  margin-top: 4px;
+  color: var(--text-subtle);
+}
