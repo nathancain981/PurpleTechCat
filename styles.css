@@ -1,4 +1,6 @@
-/* THEME VARIABLES */
+/* ============================================
+   THEME VARIABLES
+   ============================================ */
 :root {
   --accent: #8e24aa;
   --accent-soft: rgba(142, 36, 170, 0.35);
@@ -22,7 +24,9 @@ body.theme-light {
   --border: rgba(142, 36, 170, 0.25);
 }
 
-/* GLOBAL */
+/* ============================================
+   GLOBAL
+   ============================================ */
 *,
 *::before,
 *::after {
@@ -46,9 +50,20 @@ body.dyslexia-font {
   font-family: "OpenDyslexic", "Comic Sans MS", system-ui, sans-serif;
 }
 
-/* High contrast mode */
+/* ============================================
+   PROPER HIGH-CONTRAST MODE (WCAG)
+   ============================================ */
 body.high-contrast {
-  filter: invert(1) hue-rotate(180deg);
+  --bg: #000000;
+  --text: #ffffff;
+  --card-bg: #000000;
+  --border: #ffffff;
+  --accent: #ffffff;
+  filter: none !important;
+}
+
+body.high-contrast img {
+  filter: none !important; /* mascots stay normal */
 }
 
 /* Reduce motion */
@@ -57,6 +72,9 @@ body.reduce-motion * {
   transition: none !important;
 }
 
+/* ============================================
+   LAYOUT
+   ============================================ */
 main {
   width: min(900px, 92%);
   margin: 0 auto 40px auto;
@@ -113,7 +131,9 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* CARDS (GLASS) */
+/* ============================================
+   CARDS (GLASS)
+   ============================================ */
 .card {
   background: var(--card-bg);
   backdrop-filter: var(--card-blur);
@@ -123,7 +143,9 @@ nav a:hover {
   margin-bottom: 22px;
 }
 
-/* STATUS BOX */
+/* ============================================
+   STATUS BOX
+   ============================================ */
 #statusBox {
   display: inline-flex;
   align-items: center;
@@ -131,7 +153,6 @@ nav a:hover {
   padding: 10px 16px;
   border-radius: 999px;
   background: var(--card-bg);
-  backdrop-filter: var(--card-blur);
   border: 1px solid var(--border);
   margin-bottom: 16px;
   font-size: 0.95rem;
@@ -147,7 +168,9 @@ nav a:hover {
   border-color: var(--accent-soft);
 }
 
-/* TWO-COLUMN LAYOUT */
+/* ============================================
+   TWO-COLUMN LAYOUT
+   ============================================ */
 .support-row {
   display: flex;
   align-items: center;
@@ -166,7 +189,9 @@ nav a:hover {
   display: block;
 }
 
-/* BOOKING SECTION */
+/* ============================================
+   BOOKING SECTION
+   ============================================ */
 .booking-section h2 {
   margin-top: 10px;
   font-size: 1.3rem;
@@ -177,7 +202,9 @@ nav a:hover {
   opacity: 0.85;
 }
 
-/* CONTACT FORM */
+/* ============================================
+   CONTACT FORM
+   ============================================ */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -196,7 +223,6 @@ nav a:hover {
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--card-bg);
-  backdrop-filter: var(--card-blur);
   color: var(--text);
   padding: 8px 10px;
   font: inherit;
@@ -207,7 +233,9 @@ nav a:hover {
   outline: 2px solid var(--accent);
 }
 
-/* BUTTONS */
+/* ============================================
+   BUTTONS
+   ============================================ */
 .purple-btn {
   background: var(--accent);
   color: #ffffff;
@@ -239,7 +267,9 @@ nav a:hover {
   transform: scale(1.03);
 }
 
-/* ABOUT IMAGES */
+/* ============================================
+   MASCOTS + FLOATING ANIMATION
+   ============================================ */
 .about-images {
   display: flex;
   justify-content: center;
@@ -255,46 +285,29 @@ nav a:hover {
   object-fit: cover;
 }
 
-.about-cat {
-  width: 180px;
-  height: auto;
+.about-cat,
+.contact-cat,
+.gdpr-cat {
   animation: float 4s ease-in-out infinite;
-}
-
-/* CONTACT CAT */
-.contact-cat-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
 }
 
 .contact-cat {
   width: 160px;
-  height: auto;
-  animation: float 4s ease-in-out infinite;
-}
-
-/* GDPR CAT */
-.gdpr-cat-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
 }
 
 .gdpr-cat {
   width: 180px;
-  height: auto;
-  animation: float 4s ease-in-out infinite;
 }
 
-/* Floating animation */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
 
-/* MOBILE LAYOUT */
+/* ============================================
+   MOBILE LAYOUT
+   ============================================ */
 @media (max-width: 700px) {
   .about-images {
     flex-direction: column;
@@ -305,7 +318,9 @@ nav a:hover {
   }
 }
 
-/* ACCESSIBILITY FLOATING BUTTON */
+/* ============================================
+   ACCESSIBILITY FLOATING BUTTON
+   ============================================ */
 .a11y-floating-btn {
   position: fixed;
   bottom: 22px;
@@ -322,7 +337,9 @@ nav a:hover {
   z-index: 999;
 }
 
-/* ACCESSIBILITY PANEL OVERLAY */
+/* ============================================
+   ACCESSIBILITY PANEL
+   ============================================ */
 #a11y-panel {
   position: fixed;
   top: 50%;
@@ -344,7 +361,7 @@ nav a:hover {
   text-align: center;
 }
 
-/* ACCESSIBILITY TOOL BUTTONS */
+/* Accessibility tool buttons */
 .a11y-tool {
   width: 100%;
   padding: 10px;
