@@ -60,38 +60,42 @@
     <div class="service-card"><h3>🔒 Security</h3><p>I help keep devices and accounts safe from risks.</p></div>
   </section>
 
-  <!-- SUPPORT HUB CARD (CAT + STATUS + BOOKING) -->
-<section class="card status-card" style="text-align:center;">
+  <section class="support-row">
 
-  <!-- CAT IMAGE -->
-  <img src="happyitcat.png" alt="Happy IT Cat" style="width:260px; margin:0 auto 18px auto;">
+  <!-- LEFT: STATUS + BOOKING -->
+  <div class="support-card card">
 
-  <!-- REAL-TIME STATUS -->
-  <div id="statusBox">
-    <span id="statusText">Checking status...</span>
+    <div id="statusBox">
+      <span id="statusText">Checking status...</span>
+    </div>
+
+    <div class="booking-section">
+      <h2>🌈 Ready for Some Tech Help?</h2>
+      <p>Choose a time and I’ll guide you through it.</p>
+
+      <div class="booking-frame">
+        <div id="bookingButtonMount"></div>
+
+        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+        <script>
+          window.addEventListener('load', function() {
+            calendar.schedulingButton.load({
+              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Vgl9g2jaRL83QUdQ8HwgLPEZI0bfZwefRbj59JMho2mUd840d69fUmgsqsMQSJpaM_ph-lG-i?gv=true',
+              color: '#8E24AA',
+              label: "Book IT Support",
+              target: document.getElementById("bookingButtonMount")
+            });
+          });
+        </script>
+      </div>
+    </div>
+
   </div>
 
-  <!-- BOOKING SECTION -->
-  <div class="booking-section">
-    <h2>🌈 Ready for Some Tech Help?</h2>
-    <p>Choose a time and I’ll guide you through it.</p>
-
-    <div class="booking-frame">
-      <div id="bookingButtonMount"></div>
-
-      <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-      <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-      <script>
-        window.addEventListener('load', function() {
-          calendar.schedulingButton.load({
-            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Vgl9g2jaRL83QUdQ8HwgLPEZI0bfZwefRbj59JMho2mUd840d69fUmgsqsMQSJpaM_ph-lG-i?gv=true',
-            color: '#8E24AA',
-            label: "Book IT Support",
-            target: document.getElementById("bookingButtonMount")
-          });
-        });
-      </script>
-    </div>
+  <!-- RIGHT: CAT -->
+  <div class="support-cat">
+    <img src="happyitcat.png" alt="Happy IT Cat">
   </div>
 
 </section>
