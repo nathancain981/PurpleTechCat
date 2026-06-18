@@ -92,9 +92,8 @@ body {
 }
 
 .logo img {
-  width: 150px;
+  width: 120px; /* smaller */
   height: auto;
-  display: block;
 }
 
 /* nav links */
