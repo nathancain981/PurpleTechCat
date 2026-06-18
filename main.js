@@ -121,6 +121,7 @@ function updateStatus() {
   }
 }
 
+// Run immediately + update every minute
 updateStatus();
 setInterval(updateStatus, 60000);
 
