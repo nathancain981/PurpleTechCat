@@ -105,25 +105,43 @@ window.addEventListener("load", loadA11ySettings);
    STATUS CHECKER (kept from your site)
    ============================ */
 
-async function checkStatus() {
+function checkStatus() {
   const statusText = document.getElementById("statusText");
   const statusBox = document.getElementById("statusBox");
 
-  try {
-    const response = await fetch("https://nathanc31.github.io/status.json");
-    const data = await response.json();
+  const now = new Date();
+  const day = now.getDay(); // 0 = Sunday, 1 = Monday...
+  const hour = now.getHours();
+  const minute = now.getMinutes();
 
-    if (data.status === "online") {
-      statusText.textContent = "🟢 Nathan is online";
-      statusBox.classList.add("online");
-      statusBox.classList.remove("offline");
-    } else {
-      statusText.textContent = "🟣 Nathan is offline";
-      statusBox.classList.add("offline");
-      statusBox.classList.remove("online");
-    }
-  } catch (error) {
-    statusText.textContent = "⚠️ Status unavailable";
+  // Convert time to decimal (e.g., 20:30 → 20.5)
+  const time = hour + minute / 60;
+
+  // Weekly availability schedule
+  const schedule = {
+    0: [7, 10],      // Sunday 7:00–10:00
+    1: null,         // Monday (none)
+    2: [18, 22],     // Tuesday 18:00–22:00
+    3: [18, 22],     // Wednesday 18:00–22:00
+    4: [20.5, 22.5], // Thursday 20:30–22:30
+    5: null,         // Friday (none)
+    6: [7, 10]       // Saturday 7:00–10:00
+  };
+
+  const today = schedule[day];
+
+  let online = false;
+
+  if (today && time >= today[0] && time < today[1]) {
+    online = true;
+  }
+
+  if (online) {
+    statusText.textContent = "🟢 Nathan is online";
+    statusBox.classList.add("online");
+    statusBox.classList.remove("offline");
+  } else {
+    statusText.textContent = "🟣 Nathan is offline";
     statusBox.classList.add("offline");
     statusBox.classList.remove("online");
   }
