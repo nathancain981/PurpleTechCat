@@ -23,17 +23,28 @@
   </header>
   <main>
     <!-- Accessibility toolbar -->
-    <section class="card">
-      <h2>Accessibility tools</h2>
-      <div class="accessibility-toolbar" aria-label="Accessibility tools">
-        <button class="a11y-btn" data-action="font-dec">A−</button>
-        <button class="a11y-btn" data-action="font-inc">A+</button>
-        <button class="a11y-btn" data-action="contrast">High contrast</button>
-        <button class="a11y-btn" data-action="dyslexia">Dyslexia font</button>
-        <button class="a11y-btn" data-action="motion">Reduce motion</button>
-        <button class="a11y-btn" data-action="reset">Reset</button>
-      </div>
-    </section>
+   <!-- Floating Accessibility Button -->
+<button id="a11y-open" class="a11y-floating-btn" aria-label="Accessibility menu">
+  ♿
+</button>
+
+<!-- Accessibility Pop-up -->
+<div id="a11y-popup" class="a11y-popup hidden">
+  <div class="a11y-popup-content card">
+    <h2>Accessibility tools</h2>
+
+    <div class="accessibility-toolbar">
+      <button class="a11y-btn" data-action="font-dec">A−</button>
+      <button class="a11y-btn" data-action="font-inc">A+</button>
+      <button class="a11y-btn" data-action="contrast">High contrast</button>
+      <button class="a11y-btn" data-action="dyslexia">Dyslexia font</button>
+      <button class="a11y-btn" data-action="motion">Reduce motion</button>
+      <button class="a11y-btn" data-action="reset">Reset</button>
+    </div>
+
+    <button id="a11y-close" class="purple-btn a11y-close-btn">Close</button>
+  </div>
+</div>
 
     <section class="card">
       <h1>Welcome</h1>
