@@ -219,42 +219,6 @@ nav a:hover {
   filter: brightness(1.05);
 }
 
-/* ACCESSIBILITY TOOLBAR */
-.accessibility-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.a11y-btn {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--card-bg);
-  backdrop-filter: var(--card-blur);
-  color: var(--text);
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-/* REDUCED MOTION */
-body.a11y-motion * {
-  animation: none !important;
-  transition: none !important;
-  scroll-behavior: auto !important;
-}
-
-/* RESPONSIVE */
-@media (max-width: 720px) {
-  .support-row {
-    flex-direction: column;
-  }
-
-  nav a {
-    margin-left: 10px;
-  }
-}
 /* Floating wheelchair button */
 .a11y-floating-btn {
   position: fixed;
