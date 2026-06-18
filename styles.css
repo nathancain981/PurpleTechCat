@@ -476,3 +476,27 @@ textarea::placeholder {
   margin-top: 4px;
   color: var(--text-subtle);
 }
+.support-row {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.support-card {
+  flex: 1;
+  text-align: center;
+}
+
+.support-cat img {
+  width: 260px;
+  display: block;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 720px) {
+  .support-row {
+    flex-direction: column;
+  }
+}
