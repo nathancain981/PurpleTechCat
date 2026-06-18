@@ -8,12 +8,8 @@ if (themeToggle) {
     document.body.classList.toggle("theme-light");
     document.body.classList.toggle("theme-dark");
 
-    // Update icon
-    if (document.body.classList.contains("theme-light")) {
-      themeToggle.textContent = "☀️";
-    } else {
-      themeToggle.textContent = "🌙";
-    }
+    themeToggle.textContent =
+      document.body.classList.contains("theme-light") ? "☀️" : "🌙";
   });
 }
 
@@ -81,7 +77,6 @@ if (closeFaq && faqModal) {
   });
 }
 
-// Close modal when clicking outside content
 if (faqModal) {
   faqModal.addEventListener("click", (e) => {
     if (e.target === faqModal) {
@@ -94,10 +89,21 @@ if (faqModal) {
    REAL-TIME SUPPORT STATUS (ONLINE / OFFLINE)
 ========================================================= */
 
+// Support hours (UK time)
+const hours = [
+  { day: 2, start: 18, end: 22 }, // Tue 6pm–10pm
+  { day: 3, start: 18, end: 22 }, // Wed 6pm–10pm
+  { day: 4, start: 20, end: 22 }, // Thu 8pm–10pm
+  { day: 6, start: 7,  end: 10 }, // Sat 7am–10am
+  { day: 0, start: 7,  end: 10 }  // Sun 7am–10am
+];
+
 const statusBox = document.getElementById("statusBox");
 const statusText = document.getElementById("statusText");
 
 function updateStatus() {
+  if (!statusBox || !statusText) return;
+
   const now = new Date();
   const day = now.getDay();
   const hour = now.getHours();
@@ -115,8 +121,11 @@ function updateStatus() {
   }
 }
 
+updateStatus();
+setInterval(updateStatus, 60000);
+
 /* =========================================================
-   PAW TRACK ANIMATION (Lightweight)
+   PAW TRACK ANIMATION
 ========================================================= */
 const paws = document.querySelectorAll(".paw");
 
