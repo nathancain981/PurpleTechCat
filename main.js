@@ -123,7 +123,7 @@ function checkStatus() {
     1: null,         // Monday (none)
     2: [18, 22],     // Tuesday 18:00–22:00
     3: [18, 22],     // Wednesday 18:00–22:00
-    4: [20.5, 22.5], // Thursday 20:30–22:30
+    4: [20, 22], // Thursday 20:00–22:00
     5: null,         // Friday (none)
     6: [7, 10]       // Saturday 7:00–10:00
   };
