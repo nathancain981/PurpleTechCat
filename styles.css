@@ -356,6 +356,15 @@ nav a:hover {
   display: none;
 }
 
+#a11y-panel {
+  animation: slideIn 0.25s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50%) translateX(20px); opacity: 0; }
+  to   { transform: translateY(-50%) translateX(0); opacity: 1; }
+}
+
 #a11y-panel h2 {
   margin-top: 0;
   text-align: center;
