@@ -4,47 +4,53 @@
   <meta charset="utf-8">
   <title>PurpleTechCat – Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css?v=61">
+  <link rel="stylesheet" href="styles.css?v=60">
 </head>
-<body class="theme-dark">
- <header class="site-header">
+
+<body>
+  <header class="site-header">
     <div class="nav-container">
-      <div class="logo">
+
+      <!-- Clickable logo with correct filename -->
+      <a href="index.html" class="logo">
         <img src="purpletechcatlogo.png" alt="PurpleTechCat logo">
-      </div>
+      </a>
+
       <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="gdpr.html" class="active">GDPR</a>
+        <a href="gdpr.html">GDPR</a>
       </nav>
+
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
     </div>
   </header>
+
   <main>
-    <!-- Accessibility toolbar -->
-   <!-- Floating Accessibility Button -->
-<button id="a11y-open" class="a11y-floating-btn" aria-label="Accessibility menu">
-  ♿
-</button>
 
-<!-- Accessibility Pop-up -->
-<div id="a11y-popup" class="a11y-popup hidden">
-  <div class="a11y-popup-content card">
-    <h2>Accessibility tools</h2>
+    <!-- Floating Accessibility Button -->
+    <button id="a11y-open" class="a11y-floating-btn" aria-label="Accessibility menu">
+      ♿
+    </button>
 
-    <div class="accessibility-toolbar">
-      <button class="a11y-btn" data-action="font-dec">A−</button>
-      <button class="a11y-btn" data-action="font-inc">A+</button>
-      <button class="a11y-btn" data-action="contrast">High contrast</button>
-      <button class="a11y-btn" data-action="dyslexia">Dyslexia font</button>
-      <button class="a11y-btn" data-action="motion">Reduce motion</button>
-      <button class="a11y-btn" data-action="reset">Reset</button>
+    <!-- Accessibility Pop-up -->
+    <div id="a11y-popup" class="a11y-popup hidden">
+      <div class="a11y-popup-content card">
+        <h2>Accessibility tools</h2>
+
+        <div class="accessibility-toolbar">
+          <button class="a11y-btn" data-action="font-dec">A−</button>
+          <button class="a11y-btn" data-action="font-inc">A+</button>
+          <button class="a11y-btn" data-action="contrast">High contrast</button>
+          <button class="a11y-btn" data-action="dyslexia">Dyslexia font</button>
+          <button class="a11y-btn" data-action="motion">Reduce motion</button>
+          <button class="a11y-btn" data-action="reset">Reset</button>
+        </div>
+
+        <button id="a11y-close" class="purple-btn a11y-close-btn">Close</button>
+      </div>
     </div>
-
-    <button id="a11y-close" class="purple-btn a11y-close-btn">Close</button>
-  </div>
-</div>
 
     <section class="card">
       <h1>Welcome</h1>
@@ -52,6 +58,7 @@
     </section>
 
     <section class="support-row">
+
       <!-- LEFT: STATUS + BOOKING -->
       <div class="support-card card">
         <div id="statusBox">
@@ -97,6 +104,7 @@
         <li>Accessibility – making tech easier to use</li>
       </ul>
     </section>
+
   </main>
 
   <script src="main.js?v=60"></script>
