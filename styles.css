@@ -353,3 +353,21 @@ body.a11y-motion * {
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
+.contact-cat-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.contact-cat {
+  width: 160px;
+  height: auto;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Floating animation (reuse if already defined) */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
