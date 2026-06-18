@@ -255,3 +255,47 @@ body.a11y-motion * {
     margin-left: 10px;
   }
 }
+/* Floating wheelchair button */
+.a11y-floating-btn {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  backdrop-filter: var(--card-blur);
+  color: var(--text);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* Pop-up overlay */
+#a11y-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 998;
+}
+
+#a11y-popup.hidden {
+  display: none;
+}
+
+/* Pop-up content */
+.a11y-popup-content {
+  width: min(420px, 90%);
+  padding: 22px;
+  border-radius: 14px;
+}
+
+.a11y-close-btn {
+  margin-top: 16px;
+  width: 100%;
+}
