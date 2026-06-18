@@ -321,17 +321,12 @@ body.a11y-motion * {
   transform: scale(1.03);
 }
 
-.about-wrapper {
+.about-images {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.about-left,
-.about-text,
-.about-right {
-  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
 .profile-photo {
@@ -342,19 +337,13 @@ body.a11y-motion * {
 .about-cat {
   width: 180px;
   height: auto;
-  object-fit: contain;
   animation: float 4s ease-in-out infinite;
 }
 
 /* Mobile layout */
-@media (max-width: 800px) {
-  .about-wrapper {
+@media (max-width: 700px) {
+  .about-images {
     flex-direction: column;
-    text-align: center;
-  }
-
-  .about-right {
-    margin-top: 20px;
   }
 }
 
