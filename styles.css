@@ -2,24 +2,25 @@
    BASE THEME
 ========================================================= */
 :root {
-  --bg-dark: #0d0b11;
-  --bg-light: #ffffff;
-  --text-light: #ffffff;
-  --text-dark: #111111;
-  --accent: #9b4dff;
-  --accent-soft: rgba(155, 77, 255, 0.35);
-  --card-bg-dark: rgba(255, 255, 255, 0.05);
-  --card-bg-light: rgba(0, 0, 0, 0.05);
+  --accent: #8e24aa; /* your brand colour */
+  --accent-soft: rgba(142, 36, 170, 0.35);
+  --accent-bg: rgba(142, 36, 170, 0.12);
 }
 
+/* DARK MODE */
 body.theme-dark {
-  background: var(--bg-dark);
-  color: var(--text-light);
+  --bg: #0d0b11;
+  --text: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.08);
 }
 
+/* LIGHT MODE */
 body.theme-light {
-  background: var(--bg-light);
-  color: var(--text-dark);
+  --bg: #ffffff;
+  --text: #111111;
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --border: rgba(0, 0, 0, 0.08);
 }
 
 /* =========================================================
