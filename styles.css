@@ -320,3 +320,41 @@ body.a11y-motion * {
   background-color: #004182; /* darker hover */
   transform: scale(1.03);
 }
+.about-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.about-left,
+.about-text,
+.about-right {
+  flex: 1;
+}
+
+.about-cat {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-right {
+    margin-top: 20px;
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
