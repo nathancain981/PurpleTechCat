@@ -206,20 +206,47 @@ nav a.active {
 ========================================================= */
 .status-card {
   text-align: center;
+  margin-top: 18px;
 }
 
 #statusBox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
+  padding: 12px 20px;
   border-radius: 999px;
   background: rgba(5, 3, 10, 0.9);
   border: 1px solid rgba(155, 77, 255, 0.35);
+  transition: background var(--transition-fast), border var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+/* text */
 #statusText {
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+/* ONLINE STATE */
+#statusBox.online {
+  background: rgba(0, 255, 120, 0.12);
+  border-color: rgba(0, 255, 120, 0.35);
+  box-shadow: 0 0 22px rgba(0, 255, 120, 0.25);
+}
+
+#statusBox.online #statusText {
+  color: #4cff9a;
+}
+
+/* OFFLINE STATE */
+#statusBox.offline {
+  background: rgba(255, 80, 120, 0.12);
+  border-color: rgba(255, 80, 120, 0.35);
+  box-shadow: 0 0 22px rgba(255, 80, 120, 0.25);
+}
+
+#statusBox.offline #statusText {
+  color: #ff6b8a;
 }
 
 /* booking frame */
