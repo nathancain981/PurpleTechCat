@@ -8,18 +8,25 @@ if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("theme-dark");
     document.body.classList.toggle("theme-light", !isDark);
+
+    // Save theme
     localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    // Update emoji
+    themeToggle.textContent = isDark ? "🌙" : "☀️";
   });
 
   // Load saved theme
   const savedTheme = localStorage.getItem("theme");
+
   if (savedTheme === "dark") {
     document.body.classList.add("theme-dark");
+    themeToggle.textContent = "🌙";
   } else {
     document.body.classList.add("theme-light");
+    themeToggle.textContent = "☀️";
   }
 }
-
 
 /* ============================
    ACCESSIBILITY PANEL OPEN/CLOSE
