@@ -1,485 +1,125 @@
 /* =========================================================
-   ROOT + THEMES
+   BASE THEME
 ========================================================= */
 :root {
-  --bg: #05030a;
-  --bg-elevated: #0f0b1a;
-  --bg-card: #120d22;
-  --text-main: #ffffff;
-  --text-subtle: #c9c4e0;
+  --bg-dark: #0d0b11;
+  --bg-light: #ffffff;
+  --text-light: #ffffff;
+  --text-dark: #111111;
   --accent: #9b4dff;
-  --accent-soft: #b07bff;
-  --radius-lg: 18px;
-  --radius-md: 12px;
-  --radius-sm: 8px;
-  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
-  --transition-fast: 0.18s ease-out;
-  --transition-med: 0.25s ease-out;
-  --gradient-hero: linear-gradient(135deg, #9b4dff, #6a1b9a);
+  --accent-soft: rgba(155, 77, 255, 0.35);
+  --card-bg-dark: rgba(255, 255, 255, 0.05);
+  --card-bg-light: rgba(0, 0, 0, 0.05);
 }
 
-/* optional light theme support */
+body.theme-dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
 body.theme-light {
-  --bg: #f7f4ff;
-  --bg-elevated: #ffffff;
-  --bg-card: #ffffff;
-  --text-main: #1b102b;
-  --text-subtle: #5b4a7a;
-  --accent: #7b2cff;
-  --accent-soft: #a46bff;
-  --shadow-soft: 0 18px 40px rgba(40, 20, 80, 0.18);
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
 /* =========================================================
-   GLOBAL RESET
+   GLOBAL LAYOUT
 ========================================================= */
-*,
-*::before,
-*::after {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  min-height: 100%;
-}
-
-body {
-  background: radial-gradient(circle at top, #120b26 0, #05030a 55%, #020108 100%);
-  color: var(--text-main);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, sans-serif;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding-bottom: 40px;
 }
 
 /* =========================================================
-   LAYOUT WRAPPER
-========================================================= */
-#main-content {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto 40px auto;
-  padding: 0 18px 40px 18px;
-}
-
-/* =========================================================
-   HEADER + NAV
+   HEADER + LOGO
 ========================================================= */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(18px);
-  background: linear-gradient(
-    to bottom,
-    rgba(5, 3, 10, 0.96),
-    rgba(5, 3, 10, 0.88),
-    rgba(5, 3, 10, 0.0)
-  );
-  border-bottom: 1px solid rgba(155, 77, 255, 0.18);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  padding: 12px 0;
+  margin-bottom: 20px;
 }
 
 .nav-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 10px 18px 12px 18px;
+  width: min(900px, 92%);
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
 }
 
 .logo img {
-  width: 120px; /* smaller */
+  width: 120px;
   height: auto;
 }
 
-/* nav links */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  font-size: 0.95rem;
-}
-
+/* =========================================================
+   NAVIGATION
+========================================================= */
 nav a {
-  color: var(--text-subtle);
+  margin-left: 18px;
   text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 999px;
-  transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+  color: var(--text-light);
+  opacity: 0.8;
 }
 
+nav a.active,
 nav a:hover {
-  color: #ffffff;
-  background: rgba(155, 77, 255, 0.12);
-  transform: translateY(-1px);
-}
-
-nav a.active {
-  color: #ffffff;
-  background: rgba(155, 77, 255, 0.22);
-}
-
-/* theme toggle */
-.theme-toggle-btn {
-  border: none;
-  background: rgba(18, 13, 34, 0.9);
-  color: #ffdfff;
-  border-radius: 999px;
-  padding: 8px 11px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  box-shadow: 0 0 0 1px rgba(155, 77, 255, 0.35);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.theme-toggle-btn:hover {
-  background: rgba(155, 77, 255, 0.18);
-  transform: translateY(-1px);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25), 0 10px 25px rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  color: var(--accent);
 }
 
 /* =========================================================
-   HERO (FIRST CARD)
+   CARDS
 ========================================================= */
 .card {
-  background: radial-gradient(circle at top left, rgba(155, 77, 255, 0.12), rgba(10, 6, 22, 0.98));
-  border-radius: var(--radius-lg);
-  padding: 24px 22px;
-  margin-top: 22px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(155, 77, 255, 0.25);
-}
-
-/* hero card = first card on page */
-.card:first-of-type {
-  background: var(--gradient-hero);
-  border: none;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.75);
-  color: #fdf7ff;
-}
-
-.typing {
-  font-size: 2.1rem;
-  font-weight: 650;
-  letter-spacing: 0.02em;
-  margin-bottom: 10px;
-}
-
-.card:first-of-type p {
-  font-size: 1.02rem;
-  color: rgba(255, 245, 255, 0.9);
+  background: var(--card-bg-dark);
+  padding: 22px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  border: 1px solid var(--accent-soft);
 }
 
 /* =========================================================
-   SERVICES
+   STATUS BOX
 ========================================================= */
-.service-card {
-  background: rgba(5, 3, 10, 0.9);
-  border-radius: var(--radius-md);
-  padding: 14px 14px 13px 14px;
-  border: 1px solid rgba(155, 77, 255, 0.18);
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.service-card h3 {
-  font-size: 1rem;
-}
-
-.service-card p {
-  font-size: 0.92rem;
-  color: var(--text-subtle);
-}
-
-/* =========================================================
-   STATUS + BOOKING
-========================================================= */
-.status-card {
-  text-align: center;
-  margin-top: 18px;
-}
-
 #statusBox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 20px;
+  padding: 10px 16px;
   border-radius: 999px;
   background: rgba(5, 3, 10, 0.9);
   border: 1px solid rgba(155, 77, 255, 0.35);
-  transition: background var(--transition-fast), border var(--transition-fast), box-shadow var(--transition-fast);
+  margin-bottom: 16px;
+  transition: background 0.2s, border 0.2s;
 }
 
-/* text */
-#statusText {
-  font-size: 1rem;
-  font-weight: 500;
-  transition: color var(--transition-fast);
-}
-
-/* ONLINE STATE */
 #statusBox.online {
   background: rgba(0, 255, 120, 0.12);
   border-color: rgba(0, 255, 120, 0.35);
-  box-shadow: 0 0 22px rgba(0, 255, 120, 0.25);
 }
 
-#statusBox.online #statusText {
-  color: #4cff9a;
-}
-
-/* OFFLINE STATE */
 #statusBox.offline {
   background: rgba(255, 80, 120, 0.12);
   border-color: rgba(255, 80, 120, 0.35);
-  box-shadow: 0 0 22px rgba(255, 80, 120, 0.25);
-}
-
-#statusBox.offline #statusText {
-  color: #ff6b8a;
-}
-
-/* booking frame */
-.booking-frame {
-  margin-top: 12px;
 }
 
 /* =========================================================
-   FAQ
+   TWO-COLUMN LAYOUT (STATUS LEFT, CAT RIGHT)
 ========================================================= */
-.faq-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-}
-
-.faq-card h2 {
-  font-size: 1.2rem;
-}
-
-.purple-btn {
-  background: #ffffff;
-  color: #2b103f;
-  border-radius: 999px;
-  padding: 9px 18px;
-  border: none;
-  font-size: 0.95rem;
-  cursor: pointer;
-  font-weight: 550;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
-}
-
-.purple-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
-  background: #f3e7ff;
-}
-
-/* FAQ modal */
-.faq-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(3, 1, 8, 0.82);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 80;
-}
-
-.faq-modal[aria-hidden="false"] {
-  display: flex;
-}
-
-.faq-content {
-  width: min(640px, 92vw);
-  max-height: 80vh;
-  overflow-y: auto;
-  background: radial-gradient(circle at top left, rgba(155, 77, 255, 0.18), #05030f);
-  border-radius: var(--radius-lg);
-  padding: 22px 20px 20px 20px;
-  border: 1px solid rgba(155, 77, 255, 0.4);
-  box-shadow: var(--shadow-soft);
-}
-
-.faq-close {
-  border: none;
-  background: transparent;
-  color: #ffffff;
-  font-size: 1.6rem;
-  float: right;
-  cursor: pointer;
-}
-
-.faq-item {
-  margin-top: 14px;
-}
-
-.faq-item h3 {
-  font-size: 1rem;
-  margin-bottom: 3px;
-}
-
-.faq-item p {
-  font-size: 0.92rem;
-  color: var(--text-subtle);
-}
-
-/* =========================================================
-   ACCESSIBILITY TOOLBAR
-========================================================= */
-.accessibility-toolbar {
-  position: fixed;
-  right: 18px;
-  bottom: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  z-index: 70;
-}
-
-.a11y-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: 1px solid rgba(155, 77, 255, 0.4);
-  background: rgba(5, 3, 10, 0.96);
-  color: #fdf7ff;
-  font-size: 0.8rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.a11y-btn:hover {
-  background: rgba(155, 77, 255, 0.25);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
-}
-
-/* =========================================================
-   IMAGES
-========================================================= */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* hero cat / general cats */
-img[src*="cat"] {
-  width: 240px;
-  margin: 10px auto 0 auto;
-}
-
-/* bio photo (about page) */
-.bio-photo,
-img[src*="nc"] {
-  width: 180px;
-  border-radius: 14px;
-  margin: 18px auto;
-}
-
-/* =========================================================
-   FORMS (CONTACT)
-========================================================= */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input,
-select,
-textarea {
-  background: rgba(5, 3, 10, 0.96);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(155, 77, 255, 0.35);
-  padding: 9px 11px;
-  color: var(--text-main);
-  font: inherit;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: rgba(201, 196, 224, 0.7);
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-.site-footer {
-  border-top: 1px solid rgba(155, 77, 255, 0.18);
-  padding: 16px 18px 22px 18px;
-  text-align: center;
-  color: var(--text-subtle);
-  font-size: 0.85rem;
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-@media (max-width: 720px) {
-  .nav-container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .faq-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .typing {
-    font-size: 1.7rem;
-  }
-
-  img[src*="cat"] {
-    width: 200px;
-  }
-
-  .accessibility-toolbar {
-    right: 10px;
-    bottom: 14px;
-  }
-}
-/* merged booking section spacing */
-.booking-section {
-  margin-top: 18px;
-  text-align: center;
-}
-
-.booking-section h2 {
-  margin-top: 12px;
-  font-size: 1.25rem;
-}
-
-.booking-section p {
-  margin-top: 4px;
-  color: var(--text-subtle);
-}
 .support-row {
   display: flex;
-  gap: 22px;
   align-items: center;
   justify-content: center;
+  gap: 26px;
   margin-top: 22px;
 }
 
@@ -498,4 +138,75 @@ textarea::placeholder {
   .support-row {
     flex-direction: column;
   }
+}
+
+/* =========================================================
+   BOOKING SECTION
+========================================================= */
+.booking-section h2 {
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+
+.booking-section p {
+  margin-top: 4px;
+  opacity: 0.85;
+}
+
+/* =========================================================
+   ACCESSIBILITY TOOLBAR
+========================================================= */
+.accessibility-toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.a11y-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-soft);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+}
+
+/* =========================================================
+   PAW ANIMATION
+========================================================= */
+.paw-track {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.paw {
+  opacity: 0;
+  animation: pawFade 1.5s infinite;
+}
+
+@keyframes pawFade {
+  0% { opacity: 0; transform: translateY(4px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+/* =========================================================
+   FAQ MODAL
+========================================================= */
+.faq-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-content {
+  background: var(--card-bg-dark);
+  padding: 22px;
+  border-radius: 14px;
+  width: min(600px, 90%);
+  border: 1px solid var(--accent-soft);
 }
