@@ -398,3 +398,18 @@ nav a:hover {
   cursor: pointer;
   font: inherit;
 }
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366; /* WhatsApp green */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
