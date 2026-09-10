@@ -124,16 +124,16 @@ function checkStatus() {
   // Convert time to decimal (e.g., 20:30 → 20.5)
   const time = hour + minute / 60;
 
-  // Weekly availability schedule
-  const schedule = {
-    0: [7, 10],      // Sunday 7:00–10:00
-    1: null,         // Monday (none)
-    2: [18, 22],     // Tuesday 18:00–22:00
-    3: [18, 22],     // Wednesday 18:00–22:00
-    4: [20, 22], // Thursday 20:00–22:00
-    5: null,         // Friday (none)
-    6: [7, 10]       // Saturday 7:00–10:00
-  };
+  // Weekly availability schedule – term time
+const schedule = {
+  1: [20, 22],        // Monday 20:00–22:00
+  2: [20, 22],        // Tuesday 20:00–22:00
+  3: null,            // Wednesday (none)
+  4: [20.5, 22],      // Thursday 20:30–22:00
+  5: [13.5, 15.5],    // Friday 13:30–15:30
+  6: [9, 10.5],       // Saturday 09:00–10:30
+  0: [9, 10.5]        // Sunday 09:00–10:30
+};
 
   const today = schedule[day];
 
@@ -148,7 +148,7 @@ function checkStatus() {
     statusBox.classList.add("online");
     statusBox.classList.remove("offline");
   } else {
-    statusText.textContent = "🔴 Nathan is offline";
+    statusText.textContent = "🔴 Currently unavailable";
     statusBox.classList.add("offline");
     statusBox.classList.remove("online");
   }
