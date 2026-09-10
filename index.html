@@ -105,19 +105,23 @@
             <div id="bookingButtonMount"></div>
 
             <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-            <script>
-              window.addEventListener('load', function () {
-                if (window.calendar && document.getElementById("bookingButtonMount")) {
-                  calendar.schedulingButton.load({
-                    url: "https://calendar.app.google/MyPLCKQAgStmFhGf6",
-                    color: "#8e24aa",
-                    label: "Book IT Support",
-                    target: document.getElementById("bookingButtonMount")
-                  });
-                }
-              });
-            </script>
+            <!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/AcZssZ2y61aCe1YtWLOsQcA5EeuqavBUAPXdaEwP0ek=?gv=true',
+      color: '#9E69AF',
+      label: "Book Free IT Support",
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
           </div>
         </div>
       </div>
