@@ -1,12 +1,13 @@
 /* ============================================
    THEME VARIABLES
    ============================================ */
+
 :root {
   --accent: #8e24aa;
   --accent-soft: rgba(142, 36, 170, 0.35);
 }
 
-/* DARK MODE – black glass */
+/* DARK MODE */
 body.theme-dark {
   --bg: #050308;
   --text: #ffffff;
@@ -15,7 +16,7 @@ body.theme-dark {
   --border: rgba(142, 36, 170, 0.35);
 }
 
-/* LIGHT MODE – white glass */
+/* LIGHT MODE */
 body.theme-light {
   --bg: #ffffff;
   --text: #111111;
@@ -27,6 +28,7 @@ body.theme-light {
 /* ============================================
    GLOBAL
    ============================================ */
+
 *,
 *::before,
 *::after {
@@ -51,8 +53,9 @@ body.dyslexia-font {
 }
 
 /* ============================================
-   PROPER HIGH-CONTRAST MODE (WCAG)
+   HIGH CONTRAST
    ============================================ */
+
 body.high-contrast {
   --bg: #000000;
   --text: #ffffff;
@@ -73,14 +76,18 @@ body.reduce-motion * {
 }
 
 /* ============================================
-   LAYOUT
+   MAIN LAYOUT
    ============================================ */
+
 main {
   width: min(900px, 92%);
-  margin: 0 auto 40px auto;
+  margin: 0 auto 40px;
 }
 
-/* HEADER + NAV */
+/* ============================================
+   HEADER + NAVIGATION
+   ============================================ */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -120,7 +127,6 @@ nav a:hover {
   color: var(--accent);
 }
 
-/* THEME TOGGLE BUTTON */
 .theme-toggle {
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -132,8 +138,9 @@ nav a:hover {
 }
 
 /* ============================================
-   CARDS (GLASS)
+   CARDS
    ============================================ */
+
 .card {
   background: var(--card-bg);
   backdrop-filter: var(--card-blur);
@@ -144,8 +151,9 @@ nav a:hover {
 }
 
 /* ============================================
-   STATUS BOX
+   STATUS
    ============================================ */
+
 #statusBox {
   display: inline-flex;
   align-items: center;
@@ -169,8 +177,9 @@ nav a:hover {
 }
 
 /* ============================================
-   TWO-COLUMN LAYOUT (Homepage)
+   SUPPORT SECTION
    ============================================ */
+
 .support-row {
   display: flex;
   align-items: center;
@@ -186,12 +195,35 @@ nav a:hover {
 
 .support-cat img {
   width: 260px;
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
 /* ============================================
-   ABOUT PAGE LAYOUT (FIXED)
+   GOOGLE CALENDAR BOOKING FRAME
    ============================================ */
+
+.booking-frame {
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.booking-frame iframe {
+  display: block;
+  width: 100%;
+  min-height: 700px;
+  border: 0;
+  background: #ffffff;
+}
+
+/* ============================================
+   ABOUT PAGE
+   ============================================ */
+
 .about-images {
   display: flex;
   justify-content: center;
@@ -220,8 +252,9 @@ nav a:hover {
 }
 
 /* ============================================
-   CONTACT + GDPR MASCOTS
+   MASCOTS
    ============================================ */
+
 .contact-cat {
   width: 160px;
   animation: float 4s ease-in-out infinite;
@@ -232,16 +265,16 @@ nav a:hover {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Floating animation */
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
 
 /* ============================================
    CONTACT FORM
    ============================================ */
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -273,6 +306,7 @@ nav a:hover {
 /* ============================================
    BUTTONS
    ============================================ */
+
 .purple-btn {
   background: var(--accent);
   color: #ffffff;
@@ -287,12 +321,11 @@ nav a:hover {
   filter: brightness(1.05);
 }
 
-/* LinkedIn button */
 .linkedin-btn {
   display: inline-block;
   padding: 12px 20px;
-  background-color: #0A66C2;
-  color: #fff;
+  background: #0a66c2;
+  color: #ffffff;
   font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
@@ -300,30 +333,30 @@ nav a:hover {
 }
 
 .linkedin-btn:hover {
-  background-color: #004182;
+  background: #004182;
   transform: scale(1.03);
 }
 
-/* ============================================
-   MOBILE LAYOUT
-   ============================================ */
-@media (max-width: 700px) {
-  .about-images {
-    flex-direction: column;
-  }
+.whatsapp-button {
+  display: inline-block;
+  background: #25d366;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
 
-  .about-text {
-    text-align: center;
-  }
-
-  .support-row {
-    flex-direction: column;
-  }
+.whatsapp-button:hover {
+  background: #1ebe5d;
 }
 
 /* ============================================
-   ACCESSIBILITY FLOATING BUTTON
+   ACCESSIBILITY BUTTON
    ============================================ */
+
 .a11y-floating-btn {
   position: fixed;
   bottom: 22px;
@@ -341,8 +374,9 @@ nav a:hover {
 }
 
 /* ============================================
-   ACCESSIBILITY PANEL (RIGHT DRAWER)
+   ACCESSIBILITY PANEL
    ============================================ */
+
 #a11y-panel {
   position: fixed;
   top: 50%;
@@ -354,15 +388,22 @@ nav a:hover {
   width: 320px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   z-index: 1000;
   display: none;
   animation: slideIn 0.25s ease;
 }
 
 @keyframes slideIn {
-  from { transform: translateY(-50%) translateX(20px); opacity: 0; }
-  to   { transform: translateY(-50%) translateX(0); opacity: 1; }
+  from {
+    transform: translateY(-50%) translateX(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
 }
 
 #a11y-panel h2 {
@@ -370,13 +411,12 @@ nav a:hover {
   text-align: center;
 }
 
-/* Accessibility tool buttons */
 .a11y-tool {
   width: 100%;
   padding: 10px;
   margin: 8px 0;
-  background: #444;
-  color: #fff;
+  background: #444444;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -384,42 +424,30 @@ nav a:hover {
 }
 
 .a11y-tool:hover {
-  background: #555;
+  background: #555555;
 }
 
 .a11y-close {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background: #a00;
-  color: #fff;
+  background: #aa0000;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font: inherit;
 }
 
-.whatsapp-button {
-  display: inline-block;
-  background-color: #25D366; /* WhatsApp green */
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
+/* ============================================
+   FOOTER
+   ============================================ */
 
-.whatsapp-button:hover {
-  background-color: #1ebe5d;
-
-}
 .site-footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-  color: #ccc;
+  color: #cccccc;
   font-size: 0.9rem;
 }
 
@@ -435,5 +463,44 @@ nav a:hover {
 
 .footer-note {
   font-size: 0.8rem;
-  color: #aaa;
+  color: #aaaaaa;
+}
+
+/* ============================================
+   MOBILE
+   ============================================ */
+
+@media (max-width: 700px) {
+
+  main {
+    width: 94%;
+  }
+
+  .about-images,
+  .support-row {
+    flex-direction: column;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .booking-frame {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .booking-frame iframe {
+    width: 100%;
+    min-height: 750px;
+  }
+
+  .support-cat img {
+    width: 200px;
+  }
+
+  #a11y-panel {
+    width: calc(100% - 32px);
+    right: 16px;
+  }
 }
