@@ -504,6 +504,22 @@ nav {
   margin: 0 auto 2rem auto;
 }
 
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.faq-tile {
+  border-radius: 16px;
+  padding: 20px;
+  color: white;
+}
+
+.faq-tile h2 {
+  margin-top: 0;
+}
+
 /* ============================================
    MOBILE IMPROVEMENTS
    ============================================ */
