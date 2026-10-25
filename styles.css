@@ -504,6 +504,15 @@ nav a:hover {
     right: 16px;
   }
 }
+
+.DStitle-banner {
+  display: block;
+  max-width: 650px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 2rem auto;
+}
+
 .DS-banner {
   display: block;
   max-width: 650px;
