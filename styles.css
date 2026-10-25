@@ -485,6 +485,26 @@ nav {
 }
 
 /* ============================================
+   DIGITAL SAFEGUARDING IMAGES
+   ============================================ */
+
+.DStitle-banner {
+  display: block;
+  max-width: 650px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 2rem auto;
+}
+
+.DS-banner {
+  display: block;
+  max-width: 400px;   /* reduce desktop size */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 2rem auto;
+}
+
+/* ============================================
    MOBILE IMPROVEMENTS
    ============================================ */
 
