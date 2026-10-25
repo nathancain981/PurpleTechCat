@@ -170,27 +170,40 @@ if (menuToggle && siteNav) {
 
     siteNav.classList.toggle("active");
 
-    menuToggle.textContent =
-      siteNav.classList.contains("active")
-        ? "✕"
-        : "☰";
+    const isOpen = siteNav.classList.contains("active");
+
+    menuToggle.textContent = isOpen ? "✕" : "☰";
 
     menuToggle.setAttribute(
       "aria-label",
-      siteNav.classList.contains("active")
-        ? "Close menu"
-        : "Open menu"
+      isOpen ? "Close menu" : "Open menu"
+    );
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      isOpen
     );
 
   });
 
+  // Close menu when a navigation link is clicked
   siteNav.querySelectorAll("a").forEach(link => {
 
     link.addEventListener("click", () => {
 
       siteNav.classList.remove("active");
+
       menuToggle.textContent = "☰";
-      menuToggle.setAttribute("aria-label", "Open menu");
+
+      menuToggle.setAttribute(
+        "aria-label",
+        "Open menu"
+      );
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
     });
 
