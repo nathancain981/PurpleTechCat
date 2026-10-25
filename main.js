@@ -162,22 +162,22 @@ setInterval(checkStatus, 60000);
    ============================ */
 
 const menuToggle = document.getElementById("menu-toggle");
-const siteNav = document.getElementById("site-nav");
+const Nav = document.getElementById("nav");
 
 if (menuToggle && siteNav) {
 
   menuToggle.addEventListener("click", () => {
 
-    siteNav.classList.toggle("active");
+    Nav.classList.toggle("active");
 
     menuToggle.textContent =
-      siteNav.classList.contains("active")
+      Nav.classList.contains("active")
         ? "✕"
         : "☰";
 
     menuToggle.setAttribute(
       "aria-label",
-      siteNav.classList.contains("active")
+      Nav.classList.contains("active")
         ? "Close menu"
         : "Open menu"
     );
@@ -185,11 +185,11 @@ if (menuToggle && siteNav) {
   });
 
   // Close menu when a link is clicked
-  siteNav.querySelectorAll("a").forEach(link => {
+  Nav.querySelectorAll("a").forEach(link => {
 
     link.addEventListener("click", () => {
 
-      siteNav.classList.remove("active");
+      Nav.classList.remove("active");
       menuToggle.textContent = "☰";
       menuToggle.setAttribute("aria-label", "Open menu");
 
