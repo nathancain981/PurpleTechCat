@@ -484,54 +484,14 @@ nav {
     gap: 25px;
 }
 
-@media (max-width: 768px) {
-
-    .menu-toggle {
-        display: block;
-    }
-
-    #nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #0c0616;
-        border-top: 1px solid #7b2cbf;
-        padding: 20px;
-        z-index: 999;
-    }
-
-    #nav.active {
-        display: flex;
-    }
-
-    #nav a {
-        padding: 12px 0;
-        font-size: 1.1rem;
-        border-bottom: 1px solid rgba(157, 78, 221, 0.2);
-        margin-left: 0;
-    }
-
-    .nav-container {
-        position: relative;
-    }
-}
-
 /* ============================================
-   MOBILE BANNER FIXES
+   MOBILE IMPROVEMENTS
    ============================================ */
 
 @media (max-width: 768px) {
 
-  .DS-banner,
-  .DStitle-banner {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 1rem auto;
+  main {
+    width: 94%;
   }
 
   .card {
@@ -539,7 +499,74 @@ nav {
     overflow: hidden;
   }
 
+  .nav-container {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #0c0616;
+    border-top: 1px solid #7b2cbf;
+    border-radius: 0 0 12px 12px;
+    padding: 0;
+    z-index: 999;
+  }
+
+  #nav.active {
+    display: flex;
+  }
+
+  #nav a {
+    margin: 0;
+    padding: 18px;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+  }
+
+  .about-images,
+  .support-row {
+    flex-direction: column;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .support-cat img {
+    width: 200px;
+  }
+
+  .booking-frame iframe {
+    min-height: 750px;
+  }
+
+  #a11y-panel {
+    width: calc(100% - 32px);
+    right: 16px;
+  }
+
+  .DStitle-banner {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1rem auto;
+  }
+
   .DS-banner {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto 1rem auto;
     object-fit: contain;
   }
 
