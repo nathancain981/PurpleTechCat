@@ -1,1 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PurpleTechCat – Digital Safeguarding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+
+      <!-- Clickable logo with correct filename -->
+      <a href="index.html" class="logo">
+        <img src="purpletechcatlogo.png" alt="PurpleTechCat logo">
+      </a>
+
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="gdpr.html">GDPR</a>
+        <a href="digital-safeguarding.html">Digital Safeguarding</a>
+      </nav>
+
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Floating Accessibility Button -->
+    <button id="a11y-open" class="a11y-floating-btn" aria-label="Accessibility menu">
+      ♿
+    </button>
+
+    <!-- Accessibility Panel -->
+<div id="a11y-panel" class="a11y-panel">
+  <h2>Accessibility Tools</h2>
+
+  <button class="a11y-tool" onclick="toggleDyslexia()">Dyslexia‑friendly font</button>
+  <button class="a11y-tool" onclick="increaseText()">Increase text size</button>
+  <button class="a11y-tool" onclick="decreaseText()">Decrease text size</button>
+  <button class="a11y-tool" onclick="toggleContrast()">High contrast mode</button>
+  <button class="a11y-tool" onclick="toggleMotion()">Reduce motion</button>
+
+  <button id="a11y-close" class="a11y-close">Close</button>
+</div>
