@@ -48,3 +48,14 @@
   <button id="a11y-close" class="a11y-close">Close</button>
 </div>
 
+<section class="card">
+
+  <img src="PurpleTechCatDSTitle.png"
+       alt="Digital Safeguarding banner"
+       class="page-banner">
+
+  <p>
+  
+  </p>
+
+</section>
