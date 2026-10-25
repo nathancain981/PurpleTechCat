@@ -156,3 +156,45 @@ const schedule = {
 
 checkStatus();
 setInterval(checkStatus, 60000);
+
+/* ============================
+   MOBILE MENU
+   ============================ */
+
+const menuToggle = document.getElementById("menu-toggle");
+const siteNav = document.getElementById("site-nav");
+
+if (menuToggle && siteNav) {
+
+  menuToggle.addEventListener("click", () => {
+
+    siteNav.classList.toggle("active");
+
+    menuToggle.textContent =
+      siteNav.classList.contains("active")
+        ? "✕"
+        : "☰";
+
+    menuToggle.setAttribute(
+      "aria-label",
+      siteNav.classList.contains("active")
+        ? "Close menu"
+        : "Open menu"
+    );
+
+  });
+
+  // Close menu when a link is clicked
+  siteNav.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      siteNav.classList.remove("active");
+      menuToggle.textContent = "☰";
+      menuToggle.setAttribute("aria-label", "Open menu");
+
+    });
+
+  });
+
+}
