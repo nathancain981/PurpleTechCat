@@ -109,31 +109,35 @@ window.addEventListener("load", loadA11ySettings);
 
 
 /* ============================
-   STATUS CHECKER (kept from your site)
+   STATUS CHECKER
    ============================ */
 
 function checkStatus() {
+
   const statusText = document.getElementById("statusText");
   const statusBox = document.getElementById("statusBox");
 
+  // Stop on pages that don't have the status widget
+  if (!statusText || !statusBox) {
+    return;
+  }
+
   const now = new Date();
-  const day = now.getDay(); // 0 = Sunday, 1 = Monday...
+  const day = now.getDay();
   const hour = now.getHours();
   const minute = now.getMinutes();
 
-  // Convert time to decimal (e.g., 20:30 → 20.5)
   const time = hour + minute / 60;
 
-  // Weekly availability schedule – term time
-const schedule = {
-  1: [20, 22],        // Monday 20:00–22:00
-  2: [20, 22],        // Tuesday 20:00–22:00
-  3: null,            // Wednesday (none)
-  4: [20.5, 22],      // Thursday 20:30–22:00
-  5: [13.5, 15.5],    // Friday 13:30–15:30
-  6: [9, 10.5],       // Saturday 09:00–10:30
-  0: [9, 10.5]        // Sunday 09:00–10:30
-};
+  const schedule = {
+    1: [20, 22],
+    2: [20, 22],
+    3: null,
+    4: [20.5, 22],
+    5: [13.5, 15.5],
+    6: [9, 10.5],
+    0: [9, 10.5]
+  };
 
   const today = schedule[day];
 
@@ -152,10 +156,17 @@ const schedule = {
     statusBox.classList.add("offline");
     statusBox.classList.remove("online");
   }
+
 }
 
-checkStatus();
-setInterval(checkStatus, 60000);
+// Only run if the status widget exists
+if (
+  document.getElementById("statusText") &&
+  document.getElementById("statusBox")
+) {
+  checkStatus();
+  setInterval(checkStatus, 60000);
+}
 
 /* ============================
    MOBILE MENU
