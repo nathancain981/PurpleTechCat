@@ -518,3 +518,29 @@ nav {
         position: relative;
     }
 }
+
+/* ============================================
+   MOBILE BANNER FIXES
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  .DS-banner,
+  .DStitle-banner {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+
+  .card {
+    padding: 14px;
+    overflow: hidden;
+  }
+
+  .DS-banner {
+    object-fit: contain;
+  }
+
+}
