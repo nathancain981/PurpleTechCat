@@ -511,3 +511,32 @@ nav a:hover {
   height: auto;
   margin: 0 auto 2rem auto;
 }
+
+.faq-section details {
+  background: #15101f;
+  border: 1px solid #7b2cff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-section summary {
+  padding: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ffffff;
+  list-style: none;
+}
+
+.faq-section summary:hover {
+  background: #221533;
+}
+
+.faq-section details p {
+  padding: 0 16px 16px;
+  color: #dddddd;
+}
+
+.faq-section summary::-webkit-details-marker {
+  display: none;
+}
