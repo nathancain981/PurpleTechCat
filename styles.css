@@ -540,3 +540,56 @@ nav a:hover {
 .faq-section summary::-webkit-details-marker {
   display: none;
 }
+
+/* Mobile menu button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid #9d4edd;
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* Desktop menu */
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background: #0c0616;
+        border-top: 1px solid #7b2cbf;
+        padding: 20px;
+        z-index: 999;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+    }
+
+    .nav-container {
+        position: relative;
+    }
+}
