@@ -102,21 +102,46 @@
           <span id="statusText">Checking status...</span>
         </div>
         
-        <div class="booking-section">
-          <h2>🌈 Ready for Some Tech Help?</h2>
-          <p>Choose a time and I’ll guide you through it.</p>
+       <form id="supportForm"
+      action="https://formsubmit.co/nathan.c31@colc.ac.uk"
+      method="POST">
 
-          <div class="booking-frame">
-<!-- Google Calendar Appointment Scheduling begin -->
-<iframe
-src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0QoJtSELEPMTIQy1XJZK29zqqpNisrqhvY5FrmrA0FJH5_OiXByDaAzPuwXpFSgyeNNYZH9ygj?gv=true"
-style="border: 0;"
-width="100%"
-height="600"
-frameborder="0">
-</iframe>
-<!-- end Google Calendar Appointment Scheduling -->
-</div>
+    <!-- Email subject -->
+    <input type="hidden"
+           name="_subject"
+           value="New IT Support Request">
+
+    <!-- Disable captcha -->
+    <input type="hidden"
+           name="_captcha"
+           value="false">
+
+    <!-- Redirect to thank-you page -->
+    <input type="hidden"
+           name="_next"
+           value="https://nathancain981.github.io/PurpleTechCat/thankyou.html">
+
+    <input type="text"
+           name="name"
+           placeholder="Your Name"
+           required>
+
+    <input type="email"
+           name="email"
+           placeholder="Your Email"
+           required>
+
+    <textarea name="issue"
+              placeholder="Describe your issue"
+              required></textarea>
+
+    <button type="submit">
+        Send Request
+    </button>
+
+</form>
+
+        <p id="message"></p>
 
       <!-- RIGHT: CAT -->
       <div class="support-cat">
