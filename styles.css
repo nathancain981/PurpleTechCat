@@ -798,3 +798,10 @@ nav {
 .home-btn:active {
     transform: scale(0.97);
 }
+
+.required-label::after {
+    content: " *";
+    color: #ff4d6d;
+    font-weight: bold;
+    text-shadow: 0 0 6px #ff4d6d;
+}
