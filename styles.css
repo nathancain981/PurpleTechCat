@@ -155,15 +155,19 @@ nav a:hover {
    ============================================ */
 
 #statusBox {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
-  border-radius: 999px;
+
+  padding: 24px;
+  border-radius: 24px;
+
   background: var(--card-bg);
   border: 1px solid var(--border);
+
   margin-bottom: 16px;
-  font-size: 0.95rem;
+  text-align: center;
 }
 
 #statusBox.online {
@@ -198,26 +202,6 @@ nav a:hover {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* ============================================
-   GOOGLE CALENDAR BOOKING FRAME
-   ============================================ */
-
-.booking-frame {
-  width: 100%;
-  max-width: 100%;
-  background: #ffffff;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.booking-frame iframe {
-  display: block;
-  width: 100%;
-  min-height: 700px;
-  border: 0;
-  background: #ffffff;
 }
 
 /* ============================================
@@ -807,19 +791,18 @@ nav {
 }
 
 .portal-title {
-    text-align: center;
-    color: #ffffff;
-    font-size: 2rem;
+    font-size: 2.4rem;
     margin: 0;
+    color: #fff;
+
     text-shadow:
         0 0 10px #a855f7,
         0 0 20px #a855f7;
 }
 
 .portal-subtitle {
-    text-align: center;
     color: #c084fc;
-    margin: 8px 0 25px;
+    margin: 5px 0 20px;
     font-size: 1rem;
     letter-spacing: 1px;
 }
