@@ -99,6 +99,9 @@
       <!-- LEFT: STATUS + BOOKING -->
       <div class="support-card card">
         <div id="statusBox">
+          <div class="support-cat">
+        <img src="happyitcat.png" alt="Happy IT Cat">
+      </div>
           <span id="statusText">Checking status...</span>
         </div>
         
@@ -106,10 +109,9 @@
       action="https://formsubmit.co/nathancain981@gmail.com"
       method="POST">
 
-    <!-- FormSubmit settings -->
     <input type="hidden"
            name="_subject"
-           value="New PurpleTechCat Support Request">
+           value="New PurpleTechCat IT Support Request">
 
     <input type="hidden"
            name="_captcha"
@@ -119,109 +121,141 @@
            name="_next"
            value="https://nathancain981.github.io/PurpleTechCat/thankyou.html">
 
-    <h3>🌈 PurpleTechCat Support Request</h3>
-
-    <p>
+    <p class="form-intro">
         Please complete this form and I will review your request.
-        PurpleTechCat provides remote community IT support during evenings and weekends.
+        PurpleTechCat provides remote community IT support during
+        evenings and weekends.
     </p>
 
-    <!-- Name -->
-    <label for="name">Your Name</label>
+    <p class="notice">
+        Response time: Usually within 48 hours.
+    </p>
+
+    <label for="name" class="required-label">
+        Your Name
+    </label>
+
     <input type="text"
            id="name"
            name="name"
            placeholder="Your Name"
            required>
 
-    <!-- Email -->
-    <label for="email">Email Address</label>
+    <label for="email" class="required-label">
+        Email Address
+    </label>
+
     <input type="email"
            id="email"
            name="email"
            placeholder="Your Email"
            required>
 
-    <!-- Device type -->
-    <label for="device">Device Type</label>
+    <label for="phone">
+        Optional Phone Number
+    </label>
+
+    <input type="tel"
+           id="phone"
+           name="phone"
+           placeholder="Optional">
+
+    <label for="device" class="required-label">
+        Device Type
+    </label>
+
     <select id="device"
             name="device"
             required>
+
         <option value="">Select a device</option>
         <option>Laptop</option>
         <option>Desktop PC</option>
         <option>Mobile Phone</option>
         <option>Tablet</option>
         <option>Printer</option>
-        <option>Wi-Fi Router</option>
+        <option>Wi‑Fi Router</option>
         <option>Games Console</option>
+        <option>Smart TV</option>
         <option>Other</option>
+
     </select>
 
-    <!-- Support category -->
-    <label for="category">What do you need help with?</label>
+    <label for="category" class="required-label">
+        What do you need help with?
+    </label>
+
     <select id="category"
             name="category"
             required>
+
         <option value="">Select an option</option>
         <option>Slow Computer</option>
         <option>Phone or Tablet Setup</option>
-        <option>Wi-Fi Problem</option>
+        <option>Wi‑Fi Problem</option>
         <option>Printer Issue</option>
         <option>Password or Account Problem</option>
         <option>Software Installation</option>
         <option>Gaming Setup</option>
         <option>Accessibility Settings</option>
         <option>Other</option>
+
     </select>
 
-    <!-- Preferred support method -->
-    <label for="method">Preferred Support Method</label>
+    <label for="method">
+        Preferred Support Method
+    </label>
+
     <select id="method"
             name="support_method">
+
         <option>Email</option>
         <option>Google Meet</option>
+
     </select>
 
-    <!-- Preferred time -->
-    <label for="time">Preferred Time</label>
+    <label for="time">
+        Preferred Time
+    </label>
+
     <select id="time"
             name="preferred_time">
+
         <option>Monday Evening (8pm-10pm)</option>
         <option>Tuesday Evening (8pm-10pm)</option>
         <option>Thursday Evening (8:30pm-10pm)</option>
         <option>Friday Afternoon (1:30pm-3:30pm)</option>
         <option>Weekend Morning (9am-10:30am)</option>
+
     </select>
 
-    <!-- Description -->
-    <label for="issue">Describe Your Issue</label>
+    <label for="issue" class="required-label">
+        Describe Your Issue
+    </label>
+
     <textarea id="issue"
               name="issue"
               rows="6"
               placeholder="Please describe the problem in as much detail as possible."
               required></textarea>
 
-    <!-- Confirmation -->
-    <label>
+    <label class="checkbox-label">
+
         <input type="checkbox"
                name="agreement"
+               value="Accepted Terms"
                required>
+
         I understand PurpleTechCat provides remote help only and cannot assist with hardware repairs, emergency support, business IT systems, or advanced networking.
+
     </label>
 
     <button type="submit">
-        Send Support Request
+        🚀 Send IT Support Request
     </button>
 
 </form>
-
-        <p id="message"></p>
-
-      <!-- RIGHT: CAT -->
-      <div class="support-cat">
-        <img src="happyitcat.png" alt="Happy IT Cat">
-      </div>
+        
     </section>
 
     <section class="card">
