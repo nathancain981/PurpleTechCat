@@ -103,40 +103,116 @@
         </div>
         
        <form id="supportForm"
-      action="https://formsubmit.co/nathan.c31@colc.ac.uk"
+      action="https://formsubmit.co/nathancain981@gmail.com"
       method="POST">
 
-    <!-- Email subject -->
+    <!-- FormSubmit settings -->
     <input type="hidden"
            name="_subject"
-           value="New IT Support Request">
+           value="New PurpleTechCat Support Request">
 
-    <!-- Disable captcha -->
     <input type="hidden"
            name="_captcha"
            value="false">
 
-    <!-- Redirect to thank-you page -->
     <input type="hidden"
            name="_next"
            value="https://nathancain981.github.io/PurpleTechCat/thankyou.html">
 
+    <h3>🌈 PurpleTechCat Support Request</h3>
+
+    <p>
+        Please complete this form and I will review your request.
+        PurpleTechCat provides remote community IT support during evenings and weekends.
+    </p>
+
+    <!-- Name -->
+    <label for="name">Your Name</label>
     <input type="text"
+           id="name"
            name="name"
            placeholder="Your Name"
            required>
 
+    <!-- Email -->
+    <label for="email">Email Address</label>
     <input type="email"
+           id="email"
            name="email"
            placeholder="Your Email"
            required>
 
-    <textarea name="issue"
-              placeholder="Describe your issue"
+    <!-- Device type -->
+    <label for="device">Device Type</label>
+    <select id="device"
+            name="device"
+            required>
+        <option value="">Select a device</option>
+        <option>Laptop</option>
+        <option>Desktop PC</option>
+        <option>Mobile Phone</option>
+        <option>Tablet</option>
+        <option>Printer</option>
+        <option>Wi-Fi Router</option>
+        <option>Games Console</option>
+        <option>Other</option>
+    </select>
+
+    <!-- Support category -->
+    <label for="category">What do you need help with?</label>
+    <select id="category"
+            name="category"
+            required>
+        <option value="">Select an option</option>
+        <option>Slow Computer</option>
+        <option>Phone or Tablet Setup</option>
+        <option>Wi-Fi Problem</option>
+        <option>Printer Issue</option>
+        <option>Password or Account Problem</option>
+        <option>Software Installation</option>
+        <option>Gaming Setup</option>
+        <option>Accessibility Settings</option>
+        <option>Other</option>
+    </select>
+
+    <!-- Preferred support method -->
+    <label for="method">Preferred Support Method</label>
+    <select id="method"
+            name="support_method">
+        <option>Email</option>
+        <option>Google Meet</option>
+        <option>Phone Call</option>
+    </select>
+
+    <!-- Preferred time -->
+    <label for="time">Preferred Time</label>
+    <select id="time"
+            name="preferred_time">
+        <option>Monday Evening (8pm-10pm)</option>
+        <option>Tuesday Evening (8pm-10pm)</option>
+        <option>Thursday Evening (8:30pm-10pm)</option>
+        <option>Friday Afternoon (1:30pm-3:30pm)</option>
+        <option>Weekend Morning (9am-10:30am)</option>
+    </select>
+
+    <!-- Description -->
+    <label for="issue">Describe Your Issue</label>
+    <textarea id="issue"
+              name="issue"
+              rows="6"
+              placeholder="Please describe the problem in as much detail as possible."
               required></textarea>
 
+    <!-- Confirmation -->
+    <label>
+        <input type="checkbox"
+               name="agreement"
+               required>
+        I understand PurpleTechCat provides remote help only and cannot assist with hardware repairs, emergency support, business IT systems, or advanced networking.
+    </label>
+
     <button type="submit">
-        Send Request
+        Send Support Request
     </button>
 
 </form>
