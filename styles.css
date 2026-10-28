@@ -757,3 +757,44 @@ nav {
 #supportForm button:active {
     transform: scale(0.98);
 }
+
+.home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+
+    border-radius: 12px;
+    border: 1px solid #a855f7;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #9333ea,
+        #c026d3
+    );
+
+    box-shadow:
+        0 0 10px rgba(168, 85, 247, 0.5),
+        0 0 20px rgba(168, 85, 247, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 18px rgba(168, 85, 247, 0.8),
+        0 0 35px rgba(168, 85, 247, 0.4);
+
+    text-decoration: none;
+}
+
+.home-btn:active {
+    transform: scale(0.97);
+}
